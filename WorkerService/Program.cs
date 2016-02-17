@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.Threading;
 
 namespace WorkerService
 {
@@ -16,7 +17,7 @@ namespace WorkerService
                                     .Build();
 
             Console.WriteLine("Hello World");
-            
+
             // sleep indefinitely
             Thread.Sleep(Timeout.Infinite);
         }
