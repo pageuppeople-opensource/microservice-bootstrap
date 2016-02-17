@@ -1,15 +1,17 @@
 # Microservice bootstrap
 
-A git repo that you can clone and create your own microservice in ASP.NET vNext stack.
+A git repo that you can clone and create your own Microservice in ASP.NET vNext stack.
 
 The repo will support two types of services,
 * web services
 * worker service
 
+The repo in its current form supports dnx451 (meaning it will be running in mono on production)
+
 This will help you have a head start with,
 
 1. Running a ASP.NET Microservice
-1. Containerizing your service with Docker.
+1. Containerizing your service with Docker
 2. Head start with CI / CD with Travis CI
 
 ## Service design
