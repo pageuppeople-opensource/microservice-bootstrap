@@ -16,15 +16,6 @@
         "test": "xunit.runner.dnx"
     },
     "frameworks": {
-        "dnx451": { },
-        "dnxcore50": {
-            "dependencies": {
-                "Microsoft.CSharp": "4.0.1-beta-23516",
-                "System.Collections": "4.0.11-beta-23516",
-                "System.Linq": "4.0.1-beta-23516",
-                "System.Runtime": "4.0.21-beta-23516",
-                "System.Threading": "4.0.11-beta-23516"
-            }
-        }
+        "dnx451": { }      
     }
 }
