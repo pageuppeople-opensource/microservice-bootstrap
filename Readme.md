@@ -28,9 +28,9 @@ The service is designed in mind considering the Principles of Microservices as d
 
 It a [good video to watch](https://vimeo.com/131632250), if you haven't already.
 
-#### Diagram of Principles of Microservices, by Sam Newman
+#### Principles of Microservices, by Sam Newman
 
-<img src="http://samnewman.io/talks/img/principles.png" alt="Sam Newman's Principles of Microservices"/>
+![Sam Newman's Principles of Microservices](https://raw.githubusercontent.com/PageUpPeopleOrg/microservice-bootstrap/master/principles.png "Principles of Microservices, by Sam Newman")
 
 ## Get Started
 
