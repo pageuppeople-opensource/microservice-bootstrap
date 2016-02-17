@@ -21,6 +21,8 @@ This will help you have a head start with,
 2. include basic dependency injection
 3. Docker file has debian hardcoded, consider avoiding
 4. aspnet vnext version rc-update1 vs rc-final
+5. include travis ci 
+6. docker-compose enable
 
 ## Service design
 
