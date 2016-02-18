@@ -1,12 +1,12 @@
 # Microservice bootstrap
 
-A git repo that you can clone and create your own Microservice in ASP.NET vNext stack.
+A git repo that gives you a headstart on your own Microservice in ASP.NET vNext stack.
 
-The repo will support two types of services,
-* web services
-* worker service
+The repo will help you to bootstrap two kind of Microservices,
+* Web service
+* Worker service
 
-The repo in its current form supports dnx451 (meaning it will be running in mono on production)
+The repo in its current form supports dnx451 (_meaning it will be running on top of mono, if used with docker_)
 
 This will help you have a head start with,
 
@@ -19,8 +19,6 @@ This will help you have a head start with,
 
 1. include logging
 2. include basic dependency injection
-3. Docker file has debian hardcoded, consider avoiding
-4. aspnet vnext version rc-update1 vs rc-final
 5. include travis ci 
 6. docker-compose enable
 
