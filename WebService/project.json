@@ -19,11 +19,11 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --server.urls http://*:5000"
   },
 
   "frameworks": {
-    "dnx451": { }    
+    "dnx451": { }
   },
 
   "exclude": [
