@@ -1,0 +1,51 @@
+#
+# WebService - microservice
+#
+WebService:
+  build: ./WebService/.
+    
+#
+# WorkerService - microservice
+#
+WorkerService:
+  build: ./WorkerService/.
+  
+  
+#
+# Example using links and environment variables
+#
+#
+# eventstore
+#
+#eventstore:
+#  image: kpadmanabhan/eventstore
+#  environment:
+#    SERVICE_2113_NAME: "eventstore-http"
+#    SERVICE_1113_NAME: "eventstore-tcp"
+#  ports:
+#    - "2113:2113"
+#    - "1113:1113"
+#  links:
+#    - consul
+#    - registrator
+#
+# Service Discovery - Consul
+#
+#consul:
+#  command: -server -bootstrap -advertise 192.168.98.100 -dc dev
+#  image: progrium/consul:latest
+#  ports:
+#  - "8300:8300"
+#  - "8400:8400"
+#  - "8500:8500"
+#  - "8600:53/udp"
+#
+# Service Discovery - Registrator
+#
+#registrator:
+#  command: -ip 192.168.98.100 consul://192.168.98.100:8500
+#  image: gliderlabs/registrator:latest
+#  links:
+#  - consul
+#  volumes:
+#  - "/var/run/docker.sock:/tmp/docker.sock"
