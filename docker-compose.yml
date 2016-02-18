@@ -1,18 +1,20 @@
 #
 # WebService - microservice
 #
-WebService:
-  build: ./WebService/.
-    
+webservice:
+  build: ./WebService
+  ports:
+    - "5000:5000"
+
 #
 # WorkerService - microservice
 #
-WorkerService:
-  build: ./WorkerService/.
-  
-  
+workerservice:
+  build: ./WorkerService
+
 #
 # Example using links and environment variables
+# Delete it if you dont need it
 #
 #
 # eventstore
