@@ -23,7 +23,7 @@ script:
 branches:
   only:
   - master
-deploy:
+after_success:
 - "$(aws ecr get-login --region us-east-1)"
 - docker tag bootstrap-webservice:$TRAVIS_JOB_ID
 - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:$TRAVIS_JOB_ID
