@@ -26,10 +26,12 @@ This will help you have a head start with,
 ### What if I just want worker service?
 * Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
 * Remove its references from docker compose file
+* Remove sections of travis yml referring to web service
 
 ### What if I just want Web Service?
 * Remove WorkerService & WorkerService.UnitTests projects from Visual Studio and delete the folder.
 * Remove its references from docker compose file
+* Remove sections of travis yml referring to worker service
 
 ### How to ensure it is all good
 
@@ -41,8 +43,7 @@ Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to
 
 1. include logging
 2. include basic dependency injection
-5. include travis ci process
-4. Visual studio support
+3. Create a dotnet core branch - for enthusiasts
 
 ## Bootstrap idea
 
