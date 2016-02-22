@@ -1,0 +1,43 @@
+language: csharp
+sudo: required
+services:
+  - docker
+
+mono:
+  - 4.0.0
+
+before_install:
+  # set up dotnet set up
+  - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=1.0.0-rc1-final
+    sh && source ~/.dnx/dnvm/dnvm.sh
+  - dnvm upgrade
+  - dnvm install 1.0.0-rc1-update1 -arch x64 -p
+  - dnvm use default
+
+  # set up aws cli
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+install:
+  - docker build -t webservice ./WebService
+  - docker build -t workerservice ./WorkerService
+
+script:
+  # WebService test
+  - dnx -p ./WebService.UnitTests/project.json test
+  # - run docker container
+  # - run any integration tests on the container
+
+  # WorkerService test
+  - dnx -p ./WorkerService.UnitTests/project.json test
+  # - run docker container
+  # - run any integration tests on the container
+
+branches:
+  only:
+  - master
+
+deploy:
+  - $(aws ecr get-login --region us-east-1) # does docker login
+  # docker tag using $TRAVIS_JOB_ID
+  # include you docker push command to your private repo
