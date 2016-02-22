@@ -26,12 +26,12 @@ install:
 script:
   # WebService test
   - dnu restore ./WebService.UnitTests/project.json
-  - dnx -p ./WebService.UnitTests/project.json test
+  - dnx -p ./WebService.UnitTests/project.json test -parallel none
   # - run docker container
   # - run any integration tests on the container using scripts
   # WorkerService test
   - dnu restore ./WorkerService.UnitTests/project.json
-  - dnx -p ./WorkerService.UnitTests/project.json test
+  - dnx -p ./WorkerService.UnitTests/project.json test -parallel none
   # - run docker container
   # - run any integration tests on the container using scripts
 
