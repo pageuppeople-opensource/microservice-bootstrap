@@ -23,6 +23,14 @@ This will help you have a head start with,
 3. Run `docker-compose up -d` from root folder of repo.
 4. Yay all up and running, Done!
 
+### What if I just want worker service?
+* Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
+* Remove its references from docker compose file
+
+### What if I just want Web Service?
+* Remove WorkerService & WorkerService.UnitTests projects from Visual Studio and delete the folder.
+* Remove its references from docker compose file
+
 ### How to ensure it is all good
 
 Head to `http://192.168.99.100:5000/api/values` to see to web service running. Pat your own back!
@@ -34,6 +42,7 @@ Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to
 1. include logging
 2. include basic dependency injection
 5. include travis ci process
+4. Visual studio support
 
 ## Bootstrap idea
 
