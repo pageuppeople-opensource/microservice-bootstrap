@@ -24,14 +24,16 @@ install:
 
 script:
   # WebService test
+  - dnu restore ./WebService.UnitTests/project.json
   - dnx -p ./WebService.UnitTests/project.json test
   # - run docker container
-  # - run any integration tests on the container
+  # - run any integration tests on the container using scripts
 
   # WorkerService test
+  - dnu restore ./WorkerService.UnitTests/project.json
   - dnx -p ./WorkerService.UnitTests/project.json test
   # - run docker container
-  # - run any integration tests on the container
+  # - run any integration tests on the container using scripts
 
 branches:
   only:
@@ -39,5 +41,7 @@ branches:
 
 deploy:
   - $(aws ecr get-login --region us-east-1) # does docker login
+  # WebService docker push
+  - docker tag webservice:$TRAVIS_JOB_ID
   # docker tag using $TRAVIS_JOB_ID
   # include you docker push command to your private repo
