@@ -50,7 +50,7 @@ Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to
 
 The service is designed in mind considering the Principles of Microservices as documented by Sam Newman.
 
-It a [good video to watch](https://vimeo.com/131632250), if you haven't already.
+It's a [good video to watch](https://vimeo.com/131632250), if you haven't already.
 
 #### Principles of Microservices, by Sam Newman
 

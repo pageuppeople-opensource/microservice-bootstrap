@@ -42,8 +42,8 @@ branches:
 after_success:
   - $(aws ecr get-login --region us-east-1) # does docker login
   # webservice docker push
-  - docker tag bootstrap-webservice:$TRAVIS_JOB_ID 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:latest
+  - docker tag bootstrap-webservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:$TRAVIS_JOB_ID
   - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:$TRAVIS_JOB_ID
   # workerservice docker push
-  - docker tag bootstrap-workerservice:$TRAVIS_JOB_ID 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-workerservice:$TRAVIS_JOB_ID
+  - docker tag bootstrap-workerservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-workerservice:$TRAVIS_JOB_ID
   - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-workerservice:$TRAVIS_JOB_ID
