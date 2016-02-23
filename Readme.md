@@ -1,4 +1,4 @@
-# Microservice bootstrap
+# Microservice bootstrap  [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
 A git repo that gives you a headstart on your own Microservice in ASP.NET vNext stack.
 
@@ -44,6 +44,7 @@ Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to
 1. include logging
 2. include basic dependency injection
 3. Create a dotnet core branch - for enthusiasts
+4. Include code coverage & complexity metrics
 
 ## Bootstrap idea
 
