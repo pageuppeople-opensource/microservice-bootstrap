@@ -10,7 +10,7 @@ The repo will help you to bootstrap two kind of Microservices,
 * 
 This repo has been updated to DOT NET CORE 1.0 RC1 Update 2
 
-The repo in its current form supports dnxcore50 (_No more MONO mono_).
+The repo in its current form supports dnxcore50 (_No more MONO_).
 
 This will help you have a head start with,
 
