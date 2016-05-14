@@ -1,3 +1,4 @@
+language: csharp
 sudo: required
 services:
   - docker
