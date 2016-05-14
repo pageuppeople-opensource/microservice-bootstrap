@@ -1,14 +1,16 @@
 # Microservice bootstrap  [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
-A git repo that gives you a headstart on your own Microservice in ASP.NET vNext stack.
+A git repo that gives you a headstart on your own Microservice in ASP.NET vNext / .NET core 1.0 stack.
 
 *_The intention is reduce the entry barrier in going with Microservices for .NET folks._*
 
 The repo will help you to bootstrap two kind of Microservices,
 * Web service
 * Worker service
+* 
+This repo has been updated to DOT NET CORE 1.0 RC1 Update 2
 
-The repo in its current form supports dnx451 (_meaning it will be running on top of mono, if used with docker_).
+The repo in its current form supports dnxcore50 (_No more MONO mono_).
 
 This will help you have a head start with,
 
