@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using System.Threading;
+
+using static System.Threading.Thread;
+using static System.Threading.Timeout;
+using static System.Console;
 
 namespace WorkerService
 {
@@ -16,10 +19,10 @@ namespace WorkerService
                                     .AddCommandLine(args)
                                     .Build();
 
-            Console.WriteLine("Hello World");
+            WriteLine("Hello World");
 
             // sleep indefinitely
-            Thread.Sleep(Timeout.Infinite);
+            Sleep(Infinite);
         }
     }
 }
