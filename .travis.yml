@@ -2,12 +2,15 @@ sudo: required
 services:
   - docker
 
+mono:
+  - 4.0.0
+
 before_install:
   # set up dotnet set up
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=1.0.0-rc1-final
     sh && source ~/.dnx/dnvm/dnvm.sh
   - dnvm upgrade
-  - dnvm install 1.0.0-rc1-update1-coreclr -arch x64 -p
+  - dnvm install 1.0.0-rc1-update2 -r coreclr -arch x64 -p
   - dnvm use default
   # set up aws cli
   - pip install --user awscli
