@@ -8,7 +8,7 @@ mono:
 
 before_install:
   # set up dotnet set up
-  - sudo apt-get install libunwind8 gettext libssl-dev libcurl3-dev zlib1g libicu-dev
+  - sudo apt-get -yy install libunwind8 gettext libssl-dev libcurl3-dev zlib1g libicu-dev
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=1.0.0-rc1-final
     sh && source ~/.dnx/dnvm/dnvm.sh
   - dnvm upgrade
