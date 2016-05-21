@@ -1,16 +1,12 @@
-# Microservice bootstrap  [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
+# Microservice bootstrap (_Bye bye MONO, Hello dotnet core_)  [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
-A git repo that gives you a headstart on your own Microservice in ASP.NET vNext / .NET core 1.0 stack.
+A git repo that gives you a headstart on your own Microservice in [Dotnet Core](https://www.microsoft.com/net/core).
 
 *_The intention is reduce the entry barrier in going with Microservices for .NET folks._*
 
 The repo will help you to bootstrap two kind of Microservices,
 * Web service
 * Worker service
-* 
-This repo has been updated to DOT NET CORE 1.0 RC1 Update 2
-
-The repo in its current form supports dnxcore50 (_No more MONO_).
 
 This will help you have a head start with,
 
@@ -37,7 +33,7 @@ This will help you have a head start with,
 
 ### How to ensure it is all good
 
-Head to `http://192.168.99.100:5000/api/values` to see to web service running. Pat your own back!
+Head to `http://192.168.99.100:4000/api/values` to see to web service running. Pat your own back!
 
 Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to confirm, your worker service is running. Pay your own back again!
 
