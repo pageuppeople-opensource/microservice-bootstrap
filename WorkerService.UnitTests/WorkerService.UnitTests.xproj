@@ -9,9 +9,8 @@
     <ProjectGuid>df1d9dc2-c641-4d89-959b-7364f039ec1a</ProjectGuid>
     <RootNamespace>WorkerService.UnitTests</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
-    <OutputPath Condition="'$(OutputPath)'=='' ">..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
   </PropertyGroup>
-
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
