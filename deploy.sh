@@ -67,54 +67,56 @@ deploy_to_all() {
 	echo "####### Update task definition for to DC0"
 	update_task_definition ap-southeast-2 $DC0_REPO_URL
 
-	echo "####### Setting up DC2 - DC5 credentials"
-	export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC2_5
-	export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC2_5
-
-	echo "####### Pushing Docker images to DC2-DC5"
-	push_docker_image $DC2_5_REPO_URL
-
-	echo "####### Update task definition for DC2-DC5"
-	update_task_definition ap-southeast-2 $DC2_5_REPO_URL
-	update_task_definition eu-west-1 $DC2_5_REPO_URL
-	update_task_definition us-east-1 $DC2_5_REPO_URL
-	update_task_definition ap-southeast-1 $DC2_5_REPO_URL
-	
-	echo "####### Setting up DC7 credentials"
-	export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC7
-	export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC7
-
-	echo "####### Pushing Docker images to DC7"
-	push_docker_image $DC7_REPO_URL
-
-	echo "####### Update task definition for DC7"
-	update_task_definition eu-west-1 $DC7_REPO_URL
+	#TODO
+	#echo "####### Setting up DC2 - DC5 credentials"
+	#export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC2_5
+	#export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC2_5
+	#
+	#echo "####### Pushing Docker images to DC2-DC5"
+	#push_docker_image $DC2_5_REPO_URL
+	#
+	#echo "####### Update task definition for DC2-DC5"
+	#update_task_definition ap-southeast-2 $DC2_5_REPO_URL
+	#update_task_definition eu-west-1 $DC2_5_REPO_URL
+	#update_task_definition us-east-1 $DC2_5_REPO_URL
+	#update_task_definition ap-southeast-1 $DC2_5_REPO_URL
+	#
+	#echo "####### Setting up DC7 credentials"
+	#export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC7
+	#export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC7
+	#
+	#echo "####### Pushing Docker images to DC7"
+	#push_docker_image $DC7_REPO_URL
+	#
+	#echo "####### Update task definition for DC7"
+	#update_task_definition eu-west-1 $DC7_REPO_URL
 }
 
 wait_completion_for_all() {
-    export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC0
-    export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC0
+   export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC0
+   export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC0
 
-    echo "###### Waiting on DC0"
-	wait_for_completion ap-southeast-2 $DC0_REPO_URL
+   echo "###### Waiting on DC0"
+   wait_for_completion ap-southeast-2 $DC0_REPO_URL
     
-    #wait for all tasks to be up and running
-   echo "####### Setting up DC2 - DC5 credentials"
-   export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC2_5
-   export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC2_5
-
-   echo "####### Waiting on DC2-DC5"
-   wait_for_completion ap-southeast-2 $DC2_5_REPO_URL
-   wait_for_completion eu-west-1 $DC2_5_REPO_URL
-   wait_for_completion us-east-1 $DC2_5_REPO_URL
-   wait_for_completion ap-southeast-1 $DC2_5_REPO_URL
-	
-   echo "####### Setting up DC7 credentials"
-   export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC7
-   export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC7
-
-   echo "####### Wait for DC7"
-   wait_for_completion eu-west-1 $DC7_REPO_URL
+   #TODO
+   #wait for all tasks to be up and running
+   #echo "####### Setting up DC2 - DC5 credentials"
+   #export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC2_5
+   #export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC2_5
+   #
+   #echo "####### Waiting on DC2-DC5"
+   #wait_for_completion ap-southeast-2 $DC2_5_REPO_URL
+   #wait_for_completion eu-west-1 $DC2_5_REPO_URL
+   #wait_for_completion us-east-1 $DC2_5_REPO_URL
+   #wait_for_completion ap-southeast-1 $DC2_5_REPO_URL
+	#
+   #echo "####### Setting up DC7 credentials"
+   #export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_DC7
+   #export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_DC7
+   #
+   #echo "####### Wait for DC7"
+   #wait_for_completion eu-west-1 $DC7_REPO_URL
 }
 
 # dont deploy if we are building a pull request
