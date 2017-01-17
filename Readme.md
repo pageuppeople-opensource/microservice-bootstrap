@@ -1,4 +1,4 @@
-# Microservice bootstrap (_Bye bye MONO, Hello dotnet core_)  [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
+# LaunchPad Microservice Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
 A git repo that gives you a headstart on your own Microservice in [Dotnet Core](https://www.microsoft.com/net/core).
 
@@ -44,7 +44,7 @@ Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to
 3. Create a dotnet core branch - for enthusiasts
 4. Include code coverage & complexity metrics
 
-## Bootstrap idea
+## Template idea
 
 The service is designed in mind considering the Principles of Microservices as documented by Sam Newman.
 
