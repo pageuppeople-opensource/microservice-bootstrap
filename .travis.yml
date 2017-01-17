@@ -36,12 +36,6 @@ script:
 branches:
   only:
   - master
-
+  
 after_success:
-  - $(aws ecr get-login --region us-east-1) # does docker login
-  # webservice docker push
-  - docker tag launchpad-webservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/launchpad-web:latest #TODO
-  - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/launchpad-web:latest #TODO
-  # workerservice docker push
-  - docker tag launchpad-workerservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/launchpad-worker:latest #TODO
-  - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/launchpad-worker:latest #TODO
+  - ./deploy.sh
