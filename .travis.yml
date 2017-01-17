@@ -17,9 +17,9 @@ before_install:
 
 install:
   # docker build webservice
-  - docker build -t bootstrap-webservice ./WebService
+  - docker build -t launchpad-webservice ./WebService
   # docker build workerservice
-  - docker build -t bootstrap-workerservice ./WorkerService
+  - docker build -t launchpad-workerservice ./WorkerService
 
 script:
   # WebService test
@@ -37,12 +37,5 @@ branches:
   only:
   - master
 
-after_success:
-  - $(aws ecr get-login --region us-east-1) # does docker login
-  # webservice docker push
-  - docker tag bootstrap-webservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:$TRAVIS_JOB_NUMBER
-  - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-webservice:$TRAVIS_JOB_NUMBER
-  # workerservice docker push
-  - docker tag bootstrap-workerservice:latest 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-workerservice:$TRAVIS_JOB_NUMBER
-  - docker push 047651431481.dkr.ecr.us-east-1.amazonaws.com/bootstrap-workerservice:$TRAVIS_JOB_NUMBER
-
+after_success: 
+  - ./deploy.sh
