@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace WebService.Controllers
 {
@@ -10,6 +11,7 @@ namespace WebService.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            Log.Information("GET entered");
             return new string[] { "value1", "value2" };
         }
 

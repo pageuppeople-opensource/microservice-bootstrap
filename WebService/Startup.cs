@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Core;
 
 namespace WebService
 {
@@ -10,6 +12,8 @@ namespace WebService
     {
         public Startup(IHostingEnvironment env)
         {
+            Log.Information("Configuration started");
+
             var builder = new ConfigurationBuilder()
                .SetBasePath(env.ContentRootPath)
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -23,6 +27,8 @@ namespace WebService
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            Log.Information("Configuration finished");
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -32,7 +38,6 @@ namespace WebService
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddMvc();
         }
 

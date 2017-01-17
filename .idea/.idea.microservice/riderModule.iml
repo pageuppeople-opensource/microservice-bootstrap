@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../.editorconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.travis.yml" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../docker-compose.yml" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Readme.md" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../WebService" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../WebService.UnitTests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../WorkerService" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../WorkerService.UnitTests" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WebService.UnitTests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WebService.UnitTests/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WebService/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WebService/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WorkerService.UnitTests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WorkerService.UnitTests/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WorkerService/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../WorkerService/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

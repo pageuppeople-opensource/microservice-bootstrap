@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c3d4a3e-acc9-4df1-a3ee-057d36f3187a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebService.UnitTests/ValueControllerTest.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs" afterPath="$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService.UnitTests/project.json" afterPath="$PROJECT_DIR$/WebService.UnitTests/project.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/Controllers/ValuesController.cs" afterPath="$PROJECT_DIR$/WebService/Controllers/ValuesController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/Program.cs" afterPath="$PROJECT_DIR$/WebService/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/Startup.cs" afterPath="$PROJECT_DIR$/WebService/Startup.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/project.json" afterPath="$PROJECT_DIR$/WebService/project.json" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <marker date="1484629903000" expanded="true" signature="6:232" ph="..." />
+                <marker date="1484629903000" expanded="true" signature="254:2025" ph="{...}" />
+                <marker date="1484629903000" expanded="true" signature="281:2023" ph="{...}" />
+                <marker date="1484629903000" expanded="true" signature="335:1128" ph="{...}" />
+                <marker date="1484629903000" expanded="true" signature="727:969" ph="{...}" />
+                <marker date="1484629903000" expanded="true" signature="1360:1519" ph="{...}" />
+                <marker date="1484629903000" expanded="true" signature="1737:2017" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              <folding>
+                <marker date="1484629940000" expanded="true" signature="6:67" ph="..." />
+                <marker date="1484629940000" expanded="true" signature="89:690" ph="{...}" />
+                <marker date="1484629940000" expanded="true" signature="116:688" ph="{...}" />
+                <marker date="1484629940000" expanded="true" signature="169:682" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValuesController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService/Controllers/ValuesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1484629987000" expanded="true" signature="6:80" ph="..." />
+                <marker date="1484629987000" expanded="true" signature="114:915" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="195:913" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="287:407" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="496:544" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="640:660" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="771:791" ph="{...}" />
+                <marker date="1484629987000" expanded="true" signature="887:907" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SampleTest.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <marker date="1484631234000" expanded="true" signature="0:501" ph="/* using System; ... */" />
+                <marker date="1484631234000" expanded="true" signature="8:87" ph="..." />
+                <marker date="1484631234000" expanded="true" signature="123:501" ph="{...}" />
+                <marker date="1484631234000" expanded="true" signature="134:245" ph="/* see example explanation on xUnit.net website: ... */" />
+                <marker date="1484631234000" expanded="true" signature="275:497" ph="{...}" />
+                <marker date="1484631234000" expanded="true" signature="336:402" ph="{...}" />
+                <marker date="1484631234000" expanded="true" signature="437:489" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.lock.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService.UnitTests/project.lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValueControllerTest.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebService.UnitTests/ValueControllerTest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding>
+                <marker date="1484630390000" expanded="true" signature="0:332" ph="/* using Xunit; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebService.UnitTests/project.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+              <folding>
+                <marker date="1484631266000" expanded="true" signature="0:638" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="48:87" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="109:253" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="300:636" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="327:630" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="357:512" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="400:498" ph="{...}" />
+                <marker date="1484631266000" expanded="true" signature="537:620" ph="[...]" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/WebService/Startup.cs" />
+        <option value="$PROJECT_DIR$/WebService/Program.cs" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/ValuesController.cs" />
+        <option value="$PROJECT_DIR$/WebService.UnitTests/ValueControllerTest.cs" />
+        <option value="$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs" />
+        <option value="$PROJECT_DIR$/WebService.UnitTests/project.json" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1154" />
+    <option name="y" value="-1058" />
+    <option name="width" value="1920" />
+    <option name="height" value="1058" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="microservice (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="microservice (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebService.UnitTests (restoring packages...)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="microservice (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebService" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c3d4a3e-acc9-4df1-a3ee-057d36f3187a" name="Default" comment="" />
+      <created>1484628750268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1484628750268</updated>
+      <workItem from="1484628755264" duration="1696000" />
+      <workItem from="1484631041401" duration="228000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1924000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1154" y="-1058" width="1920" height="1058" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1640625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32962587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WebService/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1484629903000" expanded="true" signature="6:232" ph="..." />
+            <marker date="1484629903000" expanded="true" signature="254:2025" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="281:2023" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="335:1128" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="727:969" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="1360:1519" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="1737:2017" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <marker date="1484629940000" expanded="true" signature="6:67" ph="..." />
+            <marker date="1484629940000" expanded="true" signature="89:690" ph="{...}" />
+            <marker date="1484629940000" expanded="true" signature="116:688" ph="{...}" />
+            <marker date="1484629940000" expanded="true" signature="169:682" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService/Controllers/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484629987000" expanded="true" signature="6:80" ph="..." />
+            <marker date="1484629987000" expanded="true" signature="114:915" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="195:913" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="287:407" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="496:544" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="640:660" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="771:791" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="887:907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484631234000" expanded="true" signature="0:501" ph="/* using System; ... */" />
+            <marker date="1484631234000" expanded="true" signature="8:87" ph="..." />
+            <marker date="1484631234000" expanded="true" signature="123:501" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="134:245" ph="/* see example explanation on xUnit.net website: ... */" />
+            <marker date="1484631234000" expanded="true" signature="275:497" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="336:402" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="437:489" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/ValueControllerTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <marker date="1484630390000" expanded="true" signature="0:332" ph="/* using Xunit; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484631266000" expanded="true" signature="0:638" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="48:87" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="109:253" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="300:636" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="327:630" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="357:512" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="400:498" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="537:620" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1484629903000" expanded="true" signature="6:232" ph="..." />
+            <marker date="1484629903000" expanded="true" signature="254:2025" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="281:2023" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="335:1128" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="727:969" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="1360:1519" ph="{...}" />
+            <marker date="1484629903000" expanded="true" signature="1737:2017" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <marker date="1484629940000" expanded="true" signature="6:67" ph="..." />
+            <marker date="1484629940000" expanded="true" signature="89:690" ph="{...}" />
+            <marker date="1484629940000" expanded="true" signature="116:688" ph="{...}" />
+            <marker date="1484629940000" expanded="true" signature="169:682" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService/Controllers/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484629987000" expanded="true" signature="6:80" ph="..." />
+            <marker date="1484629987000" expanded="true" signature="114:915" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="195:913" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="287:407" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="496:544" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="640:660" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="771:791" ph="{...}" />
+            <marker date="1484629987000" expanded="true" signature="887:907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/ValueControllerTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <marker date="1484630390000" expanded="true" signature="0:332" ph="/* using Xunit; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/SampleTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1484631234000" expanded="true" signature="0:501" ph="/* using System; ... */" />
+            <marker date="1484631234000" expanded="true" signature="8:87" ph="..." />
+            <marker date="1484631234000" expanded="true" signature="123:501" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="134:245" ph="/* see example explanation on xUnit.net website: ... */" />
+            <marker date="1484631234000" expanded="true" signature="275:497" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="336:402" ph="{...}" />
+            <marker date="1484631234000" expanded="true" signature="437:489" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/project.lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebService.UnitTests/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding>
+            <marker date="1484631266000" expanded="true" signature="0:638" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="48:87" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="109:253" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="300:636" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="327:630" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="357:512" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="400:498" ph="{...}" />
+            <marker date="1484631266000" expanded="true" signature="537:620" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
