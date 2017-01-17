@@ -39,4 +39,3 @@ branches:
 
 after_success: 
   - ./deploy.sh
-
