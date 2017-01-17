@@ -5,3 +5,5 @@ WORKDIR ./app
 RUN dotnet restore
 
 EXPOSE 4000
+
+CMD ["dotnet", "run"]
