@@ -22,13 +22,12 @@ install:
   - docker build -t bootstrap-workerservice ./WorkerService
 
 script:
+  - dotnet restore
   # WebService test
-  - dotnet restore ./WebService.UnitTests/
   - dotnet test ./WebService.UnitTests/ -parallel none
   # - run docker container
   # - run any integration tests on the container using scripts
   # WorkerService test
-  - dotnet restore ./WorkerService.UnitTests/
   - dotnet test ./WorkerService.UnitTests/ -parallel none
   # - run docker container
   # - run any integration tests on the container using scripts
