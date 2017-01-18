@@ -16,7 +16,7 @@ push_docker_image()
     local REPO_URL=$1
 
     echo "####### Pushing docker images"
-    $(aws ecr get-login --region ap-southeast-2 ) # does docker login
+    $(aws ecr get-login --region us-east-1 ) # does docker login
     set -x
 
     echo "####### Pushing Web docker image"
