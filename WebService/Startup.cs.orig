@@ -12,8 +12,11 @@ namespace WebService
     {
         public Startup(IHostingEnvironment env)
         {
+<<<<<<< HEAD
             Log.Information("Configuration started");
 
+=======
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
             var builder = new ConfigurationBuilder()
                .SetBasePath(env.ContentRootPath)
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -38,6 +41,10 @@ namespace WebService
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
             services.AddMvc();
         }
 

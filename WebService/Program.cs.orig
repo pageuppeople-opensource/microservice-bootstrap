@@ -1,6 +1,9 @@
-using System.IO;
+﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
+<<<<<<< HEAD
 using Serilog;
+=======
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
 
 namespace WebService
 {
@@ -8,12 +11,15 @@ namespace WebService
     {
         public static void Main(string[] args)
         {
+<<<<<<< HEAD
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.LiterateConsole()
                 .CreateLogger();
 
             Log.Information("Creating host");
 
+=======
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -21,8 +27,11 @@ namespace WebService
                 .UseUrls("http://*:4000")
                 .Build();
 
+<<<<<<< HEAD
             Log.Information("Starting host");
 
+=======
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
             host.Run();
         }
     }

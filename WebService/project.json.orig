@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "Microsoft.NETCore.App": {
+<<<<<<< HEAD
       "version": "1.1.0",
+=======
+      "version": "1.1.0-preview1-001153-00",
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
       "type": "platform"
     },
     
@@ -38,8 +42,12 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-update1",
       "type": "build"
+<<<<<<< HEAD
     },
     "Serilog.Sinks.Literate": "2.1.0-dev-00034"
+=======
+    }
+>>>>>>> 6d4cbc48b1e7a90a661ef91355ec64a008c6076c
   },
 
   "tools": {
