@@ -3,13 +3,12 @@ using WebService.Controllers;
 
 namespace WebService.UnitTests
 {
-    public class ValueControllerTest
+    public class HealthCheckControllerTests
     {
         [Fact]
         public void DoesNotBlowUpOnLogger()
         {
-            var controller = new ValuesController();
-            var result = controller.Get();
+            new HealthCheckController().Get();
         }
     }
 }
