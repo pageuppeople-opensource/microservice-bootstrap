@@ -20,12 +20,12 @@ push_docker_image()
     set -x
 
     echo "####### Pushing Web docker image"
-    docker tag WEB_REPO_NAME:latest $REPO_URL/WEB_REPO_NAME:$BUILD_NO
-    docker push $REPO_URL/WEB_REPO_NAME:$BUILD_NO
+    docker tag $WEB_REPO_NAME:latest $REPO_URL/$WEB_REPO_NAME:$BUILD_NO
+    docker push $REPO_URL/$WEB_REPO_NAME:$BUILD_NO
 
     echo "####### Pushing Worker docker image"
-    docker tag WORKER_REPO_NAME:latest $REPO_URL/WORKER_REPO_NAME:$BUILD_NO
-    docker push $REPO_URL/WORKER_REPO_NAME:$BUILD_NO
+    docker tag $WORKER_REPO_NAME:latest $REPO_URL/$WORKER_REPO_NAME:$BUILD_NO
+    docker push $REPO_URL/$WORKER_REPO_NAME:$BUILD_NO
     set +x
 
     echo "####### Finished pushing docker images"
