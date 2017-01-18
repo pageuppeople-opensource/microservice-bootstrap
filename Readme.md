@@ -1,4 +1,4 @@
-# LaunchPad Microservice Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
+# Microservice Code Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
 A git repo that gives you a headstart on your own Microservice in [Dotnet Core](https://www.microsoft.com/net/core).
 

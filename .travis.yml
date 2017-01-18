@@ -32,9 +32,9 @@ before_install:
 
 install:
   # docker build webservice
-  - docker build -t launchpad-web ./WebService
+  - docker build -t microservice-bootstrap-webservice ./WebService
   # docker build workerservice
-  - docker build -t launchpad-worker ./WorkerService
+  - docker build -t microservice-bootstrap-workerservice ./WorkerService
 
 script:
   - dotnet restore

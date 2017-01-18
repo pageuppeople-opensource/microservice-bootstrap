@@ -6,8 +6,8 @@ DC2_5_REPO_URL=342212725307.dkr.ecr.us-east-1.amazonaws.com
 DC7_REPO_URL=356994454909.dkr.ecr.us-east-1.amazonaws.com
 
 #TODO: template repo name
-WEB_REPO_NAME=launchpad-web
-WORKER_REPO_NAME=launchpad-worker
+WEB_REPO_NAME=microservice-bootstrap-webservice
+WORKER_REPO_NAME=microservice-bootstrap-workerservice
 
 export AWS_DEFAULT_REGION="us-east-1"
 
@@ -36,10 +36,10 @@ update_task_definition () {
     local REPO_URL=$2
 
     echo "####### Updating task definition with new version"
-	#TODO: template cluster name "launchpad"
-    `pwd`/ecs-deploy-update-task-definition -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+	#TODO: template cluster name
+    `pwd`/ecs-deploy-update-task-definition -c Microservice-Bootstrap-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
-    `pwd`/ecs-deploy-update-task-definition -c Launchpad-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-update-task-definition -c Microservice-Bootstrap-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
     echo "####### Finished updating task definition with new version"
 }
@@ -49,10 +49,10 @@ wait_for_completion () {
     local REPO_URL=$2
 
     echo "####### Waiting for new version task to be up and running"
-	#TODO: template cluster name "launchpad"
-    `pwd`/ecs-deploy-wait-for-completion -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+	#TODO: template cluster name
+    `pwd`/ecs-deploy-wait-for-completion -c Microservice-Bootstrap-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
-    `pwd`/ecs-deploy-wait-for-completion -c Launchpad-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-wait-for-completion -c Microservice-Bootstrap-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
     echo "####### Task is running with new version"
 }

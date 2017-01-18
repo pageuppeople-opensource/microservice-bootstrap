@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebService", "WebService\WebService.xproj", "{F3A9E675-71BD-4193-B12B-3049EBCEF6A9}"
 EndProject
@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.travis.yml = .travis.yml
-		docker-compose.yml = docker-compose.yml
-		Readme.md = Readme.md
 		deploy.sh = deploy.sh
+		docker-compose.yml = docker-compose.yml
+		ecs-deploy-update-task-definition = ecs-deploy-update-task-definition
+		ecs-deploy-wait-for-completion = ecs-deploy-wait-for-completion
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Global
