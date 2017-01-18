@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 DC0_REPO_URL=047651431481.dkr.ecr.us-east-1.amazonaws.com
 DC2_5_REPO_URL=342212725307.dkr.ecr.us-east-1.amazonaws.com
 DC7_REPO_URL=356994454909.dkr.ecr.us-east-1.amazonaws.com
