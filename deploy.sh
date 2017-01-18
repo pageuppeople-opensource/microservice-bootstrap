@@ -22,7 +22,7 @@ push_docker_image()
     echo "####### Pushing Web docker image"
     docker tag WEB_REPO_NAME:latest $REPO_URL/WEB_REPO_NAME:$BUILD_NO
     docker push $REPO_URL/WEB_REPO_NAME:$BUILD_NO
-	
+
     echo "####### Pushing Worker docker image"
     docker tag WORKER_REPO_NAME:latest $REPO_URL/WORKER_REPO_NAME:$BUILD_NO
     docker push $REPO_URL/WORKER_REPO_NAME:$BUILD_NO
@@ -34,7 +34,7 @@ push_docker_image()
 update_task_definition () {
     local REGION_ENDPOINT=$1
     local REPO_URL=$2
-   
+
     echo "####### Updating task definition with new version"
 	#TODO: template cluster name "launchpad"
     `pwd`/ecs-deploy-update-task-definition -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
@@ -47,7 +47,7 @@ update_task_definition () {
 wait_for_completion () {
     local REGION_ENDPOINT=$1
     local REPO_URL=$2
-   
+
     echo "####### Waiting for new version task to be up and running"
 	#TODO: template cluster name "launchpad"
     `pwd`/ecs-deploy-wait-for-completion -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
@@ -99,7 +99,7 @@ wait_completion_for_all() {
 
    echo "###### Waiting on DC0"
    wait_for_completion ap-southeast-2 $DC0_REPO_URL
-    
+
    #TODO
    #wait for all tasks to be up and running
    #echo "####### Setting up DC2 - DC5 credentials"
