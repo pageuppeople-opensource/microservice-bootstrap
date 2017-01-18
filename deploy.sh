@@ -36,9 +36,9 @@ update_task_definition () {
    
     echo "####### Updating task definition with new version"
 	#TODO: template cluster name "launchpad"
-    `pwd`/ecs-deploy-update-task-definition -c launchpad -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-update-task-definition -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
-    `pwd`/ecs-deploy-update-task-definition -c launchpad -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-update-task-definition -c Launchpad-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
     echo "####### Finished updating task definition with new version"
 }
@@ -49,9 +49,9 @@ wait_for_completion () {
    
     echo "####### Waiting for new version task to be up and running"
 	#TODO: template cluster name "launchpad"
-    `pwd`/ecs-deploy-wait-for-completion -c launchpad -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-wait-for-completion -c Launchpad-Team -n $WEB_REPO_NAME -i $REPO_URL/$WEB_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
-    `pwd`/ecs-deploy-wait-for-completion -c launchpad -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
+    `pwd`/ecs-deploy-wait-for-completion -c Launchpad-Team -n $WORKER_REPO_NAME -i $REPO_URL/$WORKER_REPO_NAME -t 200 -r $REGION_ENDPOINT -b $BUILD_NO
 
     echo "####### Task is running with new version"
 }
