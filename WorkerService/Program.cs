@@ -35,8 +35,8 @@ namespace WorkerService
                 System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
                 System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
                 System.Environment.GetEnvironmentVariable("REGION"),
-                System.Environment.GetEnvironmentVariable("DC"),
-                System.Environment.GetEnvironmentVariable("Env")
+                System.Environment.GetEnvironmentVariable("DATACENTER"),
+                System.Environment.GetEnvironmentVariable("ENVIRONMENT")
             );
             
             Log.Information("{@Environment}", _environment.Public);
