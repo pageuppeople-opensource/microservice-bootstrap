@@ -17,6 +17,9 @@ namespace WorkerService
     {
         private static Environment _environment;
         private static KManager _kManager;
+        private static readonly string
+            _kinesisStreamName = "RoleStream.LIVE",
+            _kinesisWorkerId = "microservice-bootstrap-test";
 
         public static void Main(string[] args)
         {
@@ -29,12 +32,16 @@ namespace WorkerService
                 AwsKey = System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
                 AwsSecret = System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
                 AwsSessionToken = System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
-                AwsRegion = System.Environment.GetEnvironmentVariable("AWS_REGION_ENDPOINT") // TODO: To verify 
+                AwsRegion = System.Environment.GetEnvironmentVariable("AWS_REGION_ENDPOINT") // TODO: To verify
             };
 
             Log.Information("Environment variables:");
             foreach (PropertyInfo property in _environment.GetType().GetProperties())
                 Log.Information($"  {property.Name}: {property.GetValue(_environment, null)}");
+
+            Log.Information("Kinesis variables:");
+            Log.Information($"  StreamName: {_kinesisStreamName}");
+            Log.Information($"  WorkerId: {_kinesisWorkerId}");
 
             Log.Information("Starting configuration");
 
@@ -62,16 +69,14 @@ namespace WorkerService
         {
             _kManager = new KManager(_environment.AwsKey, 
                 _environment.AwsSecret, 
-                "RoleStream.LIVE", 
-                regionEndpoint, 
+                _kinesisStreamName, 
+                RegionEndpoint.GetBySystemName(_environment.AwsRegion), 
                 _environment.AwsSessionToken, 
-                "microservice-bootstrap-test");
+                _kinesisWorkerId);
 
             var result = _kManager
                         .Consumer
                         .Start(new RecordProcessor());
-
-           
         }
     }
 }
