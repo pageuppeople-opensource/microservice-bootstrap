@@ -32,11 +32,11 @@ namespace WorkerService
                 AwsKey = System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
                 AwsSecret = System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
                 AwsSessionToken = System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
-                AwsRegion = System.Environment.GetEnvironmentVariable("AWS_REGION_ENDPOINT") // TODO: To verify
+                AwsRegion = System.Environment.GetEnvironmentVariable("REGION"),
+                Dc = System.Environment.GetEnvironmentVariable("DC"),
+                Env = System.Environment.GetEnvironmentVariable("Env")
             };
             
-            //foreach (PropertyInfo property in _environment.GetType().GetProperties())
-            //    Log.Information($"  {property.Name}: {property.GetValue(_environment, null)}");
             Log.Information("{@Environment}", _environment);
 
             Log.Information("Kinesis variables:");

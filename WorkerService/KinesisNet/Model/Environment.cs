@@ -11,5 +11,7 @@ namespace WorkerService.KinesisNet.Model
         public string AwsSecret { get; set; }
         public string AwsSessionToken { get; set; }
         public string AwsRegion { get; set; }
+        public string Dc { get; set; }
+        public string Env { get; set; }
     }
 }
