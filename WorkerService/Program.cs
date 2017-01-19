@@ -34,10 +34,10 @@ namespace WorkerService
                 AwsSessionToken = System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
                 AwsRegion = System.Environment.GetEnvironmentVariable("AWS_REGION_ENDPOINT") // TODO: To verify
             };
-
-            Log.Information("Environment variables:");
-            foreach (PropertyInfo property in _environment.GetType().GetProperties())
-                Log.Information($"  {property.Name}: {property.GetValue(_environment, null)}");
+            
+            //foreach (PropertyInfo property in _environment.GetType().GetProperties())
+            //    Log.Information($"  {property.Name}: {property.GetValue(_environment, null)}");
+            Log.Information("{@Environment}", _environment);
 
             Log.Information("Kinesis variables:");
             Log.Information($"  StreamName: {_kinesisStreamName}");

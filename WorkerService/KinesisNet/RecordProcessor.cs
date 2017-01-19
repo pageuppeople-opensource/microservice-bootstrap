@@ -4,7 +4,7 @@ using System.Text;
 using Amazon.Kinesis.Model;
 using WorkerService.KinesisNet.Interface;
 
-namespace WorkerService.KinesisNet.Model
+namespace WorkerService.KinesisNet
 {
     public class RecordProcessor : IRecordProcessor
     {
