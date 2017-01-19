@@ -70,7 +70,7 @@ TASK_DEF_URN=`$AWS_ECS_COMMAND describe-services --services $SERVICE --cluster $
 echo "Current task definition $TASK_DEF_URN"
 
 CURRENT_TASK_DEF=`$AWS_ECS_COMMAND describe-task-definition --task-def $TASK_DEF_URN \
-                  | sed -e "s|\"image\": *\"${IMAGE}:.*\"|\"image\": \"$IMAGE:$TAG\"|g" \
+                  | sed -e "s|\"image\": *\"https:\/\/${IMAGE}:.*\"|\"image\": \"$IMAGE:$TAG\"|g" \
                   | jq '.taskDefinition|{family: .family, volumes: .volumes, containerDefinitions: .containerDefinitions}'`
 #echo $CURRENT_TASK_DEF
 
