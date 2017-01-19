@@ -1,22 +1,22 @@
 #!/bin/bash
 
 
-DC0_REPO_URL=047651431481.dkr.ecr.us-east-1.amazonaws.com
-DC2_5_REPO_URL=342212725307.dkr.ecr.us-east-1.amazonaws.com
-DC7_REPO_URL=356994454909.dkr.ecr.us-east-1.amazonaws.com
+DC0_REPO_URL=047651431481.dkr.ecr.ap-southeast-2.amazonaws.com
+DC2_5_REPO_URL=342212725307.dkr.ecr.ap-southeast-2.amazonaws.com
+DC7_REPO_URL=356994454909.dkr.ecr.ap-southeast-2.amazonaws.com
 
 #TODO: template repo name
 WEB_REPO_NAME=microservice-bootstrap-webservice
 WORKER_REPO_NAME=microservice-bootstrap-workerservice
 
-export AWS_DEFAULT_REGION="us-east-1"
+export AWS_DEFAULT_REGION="ap-southeast-2"
 
 push_docker_image()
 {
     local REPO_URL=$1
 
     echo "####### Pushing docker images"
-    $(aws ecr get-login --region us-east-1 ) # does docker login
+    $(aws ecr get-login --region ap-southeast-2 ) # does docker login
     set -x
 
     echo "####### Pushing Web docker image"
