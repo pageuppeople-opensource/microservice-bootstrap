@@ -173,7 +173,7 @@ namespace WorkerService.KinesisNet.Persistance
                         new AttributeDefinition()
                         {
                             AttributeName = "Id",
-                            AttributeType = "S"
+                            AttributeType = "S",
                         }
                     },
                         KeySchema = new List<KeySchemaElement>()

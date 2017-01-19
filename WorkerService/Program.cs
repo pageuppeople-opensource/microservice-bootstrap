@@ -3,6 +3,10 @@ using System.Reflection;
 using Amazon;
 using Microsoft.Extensions.Configuration;
 using Serilog;
+using Serilog.Events;
+using Serilog.Formatting.Json;
+using SeriLog.LogSanitizingFormatter;
+using WorkerService.EventProcessors;
 using WorkerService.KinesisNet;
 using WorkerService.KinesisNet.Interface;
 using WorkerService.KinesisNet.Model;
@@ -17,9 +21,6 @@ namespace WorkerService
     {
         private static Environment _environment;
         private static KManager _kManager;
-        private static readonly string
-            _kinesisStreamName = "RoleStream.LIVE",
-            _kinesisWorkerId = "microservice-bootstrap-test";
 
         public static void Main(string[] args)
         {
@@ -27,21 +28,18 @@ namespace WorkerService
                 .WriteTo.LiterateConsole()
                 .CreateLogger();
 
+            //new LoggerConfiguration().WriteTo.Co
             _environment = new Environment
-            {
-                AwsKey = System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
-                AwsSecret = System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
-                AwsSessionToken = System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
-                AwsRegion = System.Environment.GetEnvironmentVariable("REGION"),
-                Dc = System.Environment.GetEnvironmentVariable("DC"),
-                Env = System.Environment.GetEnvironmentVariable("Env")
-            };
+            (
+                System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
+                System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
+                System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
+                System.Environment.GetEnvironmentVariable("REGION"),
+                System.Environment.GetEnvironmentVariable("DC"),
+                System.Environment.GetEnvironmentVariable("Env")
+            );
             
-            Log.Information("{@Environment}", _environment);
-
-            Log.Information("Kinesis variables:");
-            Log.Information($"  StreamName: {_kinesisStreamName}");
-            Log.Information($"  WorkerId: {_kinesisWorkerId}");
+            Log.Information("{@Environment}", _environment.Public);
 
             Log.Information("Starting configuration");
 
@@ -49,8 +47,6 @@ namespace WorkerService
                                     .AddEnvironmentVariables()
                                     .AddCommandLine(args)
                                     .Build();
-
-            WriteLine("Hello World");
 
             StartListeningForEvents();
 
@@ -67,16 +63,21 @@ namespace WorkerService
 
         public static void StartListeningForEvents()
         {
-            _kManager = new KManager(_environment.AwsKey, 
-                _environment.AwsSecret, 
-                _kinesisStreamName, 
-                RegionEndpoint.GetBySystemName(_environment.AwsRegion), 
-                _environment.AwsSessionToken, 
-                _kinesisWorkerId);
+            var kinesisStreamName = "RoleStream.LIVE";
+            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name;
 
-            var result = _kManager
-                        .Consumer
-                        .Start(new RecordProcessor());
+            Log.Information("KManager variables:");
+            Log.Information($"  StreamName: {kinesisStreamName}");
+            Log.Information($"  WorkerId: {kinesisWorkerId}");
+
+            _kManager = new KManager(_environment.Public.AwsKey, 
+                _environment.Private.AwsSecret, 
+                kinesisStreamName, 
+                RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion), 
+                _environment.Private.AwsSessionToken, 
+                kinesisWorkerId);
+
+            _kManager.Consumer.Start(new RolesEventProcessor());
         }
     }
 }

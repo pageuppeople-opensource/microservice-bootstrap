@@ -11,7 +11,7 @@ webservice:
     AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
     ENV: "${ENV}"
     DC: "${DC}"
-	REGION: "${REGION}"
+    REGION: "${REGION}"
 
 #
 # WorkerService - microservice
@@ -24,7 +24,7 @@ workerservice:
     AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
     ENV: "${ENV}"
     DC: "${DC}"
-	REGION: "${REGION}"
+    REGION: "${REGION}"
 
 #
 # Example using links and environment variables

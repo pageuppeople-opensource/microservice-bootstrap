@@ -4,9 +4,9 @@ using System.Text;
 using Amazon.Kinesis.Model;
 using WorkerService.KinesisNet.Interface;
 
-namespace WorkerService.KinesisNet
+namespace WorkerService.EventProcessors
 {
-    public class RecordProcessor : IRecordProcessor
+    public class RolesEventProcessor : IRecordProcessor
     {
         public void Process(string shardId, string sequenceNumber, DateTime lastUpdateUtc, IList<Record> records, Action<string, string, DateTime> saveCheckpoint)
         {
