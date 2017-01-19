@@ -5,12 +5,24 @@ webservice:
   build: ./WebService
   ports:
     - "4000:4000"
+  environment:
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+    AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
+    ENV: "${ENV}"
+    DC: "${DC}"
 
 #
 # WorkerService - microservice
 #
 workerservice:
   build: ./WorkerService
+  environment:
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+    AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
+    ENV: "${ENV}"
+    DC: "${DC}"
 
 #
 # Example using links and environment variables
