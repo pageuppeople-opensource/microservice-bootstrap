@@ -67,19 +67,15 @@ namespace WorkerService
         public static void StartListeningForEvents()
         {
             var kinesisStreamName = "RoleStream.LIVE";
-            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name;
+            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Public.Env;
 
             Log.Information("KManager variables:");
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
-            var dynamoClient = _environment.IsLocal() 
-                ? new AmazonDynamoDBClient(_environment.Public.AwsKey, _environment.Private.AwsSecret, _environment.Private.AwsSessionToken, new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion) }) 
-                : new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion)});
+            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion)});
 
-            var kinesisClient = _environment.IsLocal()
-                ? new AmazonKinesisClient(_environment.Public.AwsKey, _environment.Private.AwsSecret, _environment.Private.AwsSessionToken, new AmazonKinesisConfig { RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion) })
-                : new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
+            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
 
             _kManager = new KManager(dynamoClient, kinesisClient, kinesisWorkerId);
 
