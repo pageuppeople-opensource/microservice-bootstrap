@@ -169,8 +169,12 @@ namespace WorkerService.KinesisNet.Persistance
 
                 var listTables = await _client.ListTablesAsync(listTablesRequest);
 
+                Log.Debug("{@listTables}", listTables);
+
                 if (listTables.TableNames.Contains(TableName))
                 {
+
+                    Log.Debug("Table exists");
                     _tableExists = true;
                 }
                 else

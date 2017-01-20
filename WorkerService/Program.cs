@@ -50,6 +50,7 @@ namespace WorkerService
 
             StartListeningForEvents();
 
+            Log.Information("Going to sleep... zzzzz");
             // sleep indefinitely
             Sleep(Infinite);
 
