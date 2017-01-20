@@ -33,15 +33,12 @@ namespace WorkerService
             //new LoggerConfiguration().WriteTo.Co
             _environment = new Environment
             (
-                System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
-                System.Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"),
-                System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
                 System.Environment.GetEnvironmentVariable("REGION"),
                 System.Environment.GetEnvironmentVariable("DC"),
                 System.Environment.GetEnvironmentVariable("ENV")
             );
             
-            Log.Information("{@Environment}", _environment.Public);
+            Log.Information("{@Environment}", _environment);
 
             Log.Information("Starting configuration");
 
@@ -66,15 +63,15 @@ namespace WorkerService
         public static void StartListeningForEvents()
         {
             var kinesisStreamName = "RoleStream.LIVE";
-            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Public.Env;
+            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Env;
 
             Log.Information("KManager variables:");
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
-            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion)});
+            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion)});
 
-            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
+            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion )});
 
             _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
