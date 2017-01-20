@@ -1,4 +1,5 @@
-﻿using WorkerService.KinesisNet.Model;
+﻿using System.Threading.Tasks;
+using WorkerService.KinesisNet.Model;
 
 namespace WorkerService.KinesisNet.Interface
 {
@@ -6,7 +7,7 @@ namespace WorkerService.KinesisNet.Interface
     {
         IConsumer EnableSaveToDynamo(bool saveProgress = true);
 
-        Result Start(IRecordProcessor recordProcessor, string streamName = null);
+        Task<Result> Start(IRecordProcessor recordProcessor, string streamName = null);
         void Stop();
     }
 }

@@ -45,7 +45,7 @@ namespace WorkerService.KinesisNet
             return this;
         }
 
-        public Result Start(IRecordProcessor recordProcessor, string streamName = null)
+        public async Task<Result> Start(IRecordProcessor recordProcessor, string streamName = null)
         {
             if (_isRunning)
             {
@@ -62,7 +62,7 @@ namespace WorkerService.KinesisNet
                 return Result.Create(false, "Please set a stream name.");
             }
 
-            _dynamoDb.Init();
+            await _dynamoDb.Init();
 
             _isRunning = true;
             _currentRecordsProcessing = 0;

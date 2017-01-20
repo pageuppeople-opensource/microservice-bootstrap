@@ -7,7 +7,7 @@ namespace WorkerService.KinesisNet.Interface
 {
     internal interface IDynamoDB
     {
-        void Init();
+        Task Init();
         Task SaveToDatabase(string shardId, string sequenceNumber, DateTime lastUpdatedUtc);
         Task<List<KShard>> GetShards(IList<string> shardIds);
     }

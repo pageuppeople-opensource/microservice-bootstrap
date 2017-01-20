@@ -51,9 +51,9 @@ namespace WorkerService.KinesisNet.Persistance
             _utilities = utilities;
         }
 
-        public void Init()
+        public async Task Init()
         {
-            CreateTableIfNotExists();
+            await CreateTableIfNotExists();
         }
 
         public async Task SaveToDatabase(string shardId, string sequenceNumber, DateTime lastUpdateUtc)
@@ -158,7 +158,7 @@ namespace WorkerService.KinesisNet.Persistance
             }
         }
 
-        private void CreateTableIfNotExists()
+        private async Task CreateTableIfNotExists()
         {
             var listTablesRequest = new ListTablesRequest { ExclusiveStartTableName = TableName.Substring(0, 6) };
 
@@ -167,7 +167,7 @@ namespace WorkerService.KinesisNet.Persistance
 
                 Log.Information("Checking if kinesis_checkpoint table exists");
 
-                var listTables = AsyncHelper.RunSync(() =>_client.ListTablesAsync(listTablesRequest));
+                var listTables = await _client.ListTablesAsync(listTablesRequest);
 
                 if (listTables.TableNames.Contains(TableName))
                 {
@@ -204,7 +204,7 @@ namespace WorkerService.KinesisNet.Persistance
 
                     Log.Information("Creating dyanmo table for kinesis checkpoints...");
 
-                    var response = AsyncHelper.RunSync(() => _client.CreateTableAsync(request));
+                    var response = await _client.CreateTableAsync(request);
 
                     if (response.HttpStatusCode != HttpStatusCode.OK)
                     {
@@ -216,7 +216,7 @@ namespace WorkerService.KinesisNet.Persistance
 
                     while (tableStatus != TableStatus.ACTIVE)
                     {
-                        var checkTableStatus = AsyncHelper.RunSync(() => _client.DescribeTableAsync(new DescribeTableRequest(TableName)));
+                        var checkTableStatus = await _client.DescribeTableAsync(new DescribeTableRequest(TableName));
 
                         tableStatus = checkTableStatus.Table.TableStatus;
 
