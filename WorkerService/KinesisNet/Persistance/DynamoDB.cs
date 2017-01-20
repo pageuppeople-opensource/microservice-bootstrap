@@ -164,6 +164,9 @@ namespace WorkerService.KinesisNet.Persistance
 
             try
             {
+
+                Log.Information("Checking if kinesis_checkpoint table exists");
+
                 var listTables = AsyncHelper.RunSync(() =>_client.ListTablesAsync(listTablesRequest));
 
                 if (listTables.TableNames.Contains(TableName))
@@ -195,9 +198,12 @@ namespace WorkerService.KinesisNet.Persistance
                         {
                             ReadCapacityUnits = _utilities.DynamoReadCapacityUnits,
                             WriteCapacityUnits = _utilities.DynamoWriteCapacityUnits
-                        }
+                        },
                     };
-                    
+
+
+                    Log.Information("Creating dyanmo table for kinesis checkpoints...");
+
                     var response = AsyncHelper.RunSync(() => _client.CreateTableAsync(request));
 
                     if (response.HttpStatusCode != HttpStatusCode.OK)
@@ -213,6 +219,8 @@ namespace WorkerService.KinesisNet.Persistance
                         var checkTableStatus = AsyncHelper.RunSync(() => _client.DescribeTableAsync(new DescribeTableRequest(TableName)));
 
                         tableStatus = checkTableStatus.Table.TableStatus;
+
+                        Log.Information("Waiting for dynamo table creation...");
 
                         Thread.Sleep(500);
                     }
