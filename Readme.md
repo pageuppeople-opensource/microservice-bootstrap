@@ -34,17 +34,32 @@ When a bad message comes through ... (To continue)
 
 ### Setup environment variables
 
+The environment variables are setup for live when you deploy your infrastructure for the service.
+
+For local deployment, you will have to setup the environment variables on your PC.
+
 The following environment variables are required:
-* AWS_ACCESS_KEY_ID
+* AWS_ACCESS_KEY_ID (AWS keys obtained using instructions below)
 * AWS_SECRET_ACCESS_KEY
 * AWS_SESSION_TOKEN
-* ENV
-* DC
-* REGION
+* ENV (Set as your first name for local - this enables you to identify your own AWS resources)
+* DC (Set as dc0 for local)
+* REGION (Set as 'ap-southeast-2' for local)
 
-The AWS environment variables can be obtained from the Amazon using the Power User Account.
+### Obtain AWS Credentials
+#### PageUp AWSCredentialsGenerator
+To get this running on your PC follow the instructions [here](https://code.pageuppeople.com/diffusion/CREDGEN/)
 
-The other variables will be obtained automatically during deployment. If you want to run locally (ie. Visual Studio), you must set these environment variables for your OS.
+#### Without the credentials generator
+1. Generate AWS keys at [status.pageuppeople.com](https://status.pageuppeople.com/AWSToken/Token)
+2. Once keys have been generated, run the bash scripts on that page to copy your credentials to your local environment
+3. Run CopyAWSCredentialsToUserProfile.sh in the root of the project dir
+4. Set a system variable for
+    - ENV = {your_username} (this will become part of your table/queue namespace in AWS in DC0)
+    - DC = DC0 (for local development)
+    - IsLocalServer = true (for local development so that ES hits this API)
+5. Restart VS for changes to take effect (if you get expiry errors while debugging restart visual studio again)
+6. Run the CommentsAPI project in debug
 
 ### What if I just want worker service?
 * Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
