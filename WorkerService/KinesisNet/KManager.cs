@@ -55,7 +55,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _client = new AmazonKinesisClient(awsKey, awsSecret, config);
@@ -73,7 +73,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _client = new AmazonKinesisClient(awsKey, awsSecret, awsSessionToken, config);
@@ -91,7 +91,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _client = kinesisClient;
@@ -112,7 +112,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _utilities = new Utilities(_client, workerId);

@@ -16,7 +16,6 @@ using WorkerService.KinesisNet.Persistance;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
 using static System.Console;
-using Environment = WorkerService.KinesisNet.Model.Environment;
 
 namespace WorkerService
 {
