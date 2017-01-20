@@ -87,7 +87,7 @@ namespace WorkerService.KinesisNet
             Log.Information("Instantiated KManager");
         }
 
-        public KManager(IAmazonDynamoDB dynamoClient, IAmazonKinesis kinesisClient, string workerId)
+        public KManager(IAmazonDynamoDB dynamoClient, IAmazonKinesis kinesisClient, string streamName, string workerId)
         {
             if (workerId == null)
             {
@@ -101,6 +101,9 @@ namespace WorkerService.KinesisNet
 
             _producer = new Producer(_client, _utilities);
             _consumer = new Consumer(_client, _utilities, _dynamoDb);
+
+
+            _utilities.SetStreamName(streamName);
 
             Log.Information("Instantiated KManager");
         }

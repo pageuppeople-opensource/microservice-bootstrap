@@ -77,7 +77,7 @@ namespace WorkerService
 
             var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
 
-            _kManager = new KManager(dynamoClient, kinesisClient, kinesisWorkerId);
+            _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
             _kManager.Consumer.Start(new RolesEventProcessor());
         }
