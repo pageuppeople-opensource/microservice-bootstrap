@@ -36,7 +36,12 @@ namespace WorkerService
             (
                 System.Environment.GetEnvironmentVariable("REGION"),
                 System.Environment.GetEnvironmentVariable("DC"),
-                System.Environment.GetEnvironmentVariable("ENV")
+                System.Environment.GetEnvironmentVariable("ENV"),
+                typeof(Program)
+                .GetTypeInfo()
+                .Assembly
+                .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                .InformationalVersion
             );
             
             Log.Information("{@Environment}", _environment);
