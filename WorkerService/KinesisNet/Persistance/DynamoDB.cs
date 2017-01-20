@@ -16,13 +16,20 @@ namespace WorkerService.KinesisNet.Persistance
 {
     internal class DynamoDB : IDynamoDB
     {
-        private readonly AmazonDynamoDBClient _client;
+        private readonly IAmazonDynamoDB _client;
         private const string TableName = "kinesisnet_checkpoint";
         private const string KeyIdPattern = "{0}+{1}+{2}";
 
         private bool _tableExists;
 
         private readonly IUtilities _utilities;
+
+        public DynamoDB(IAmazonDynamoDB client, IUtilities utilities)
+            : this(utilities)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            _client = client;
+        }
 
         public DynamoDB(string awsKey, string awsSecret, RegionEndpoint regionEndpoint, IUtilities utilities)
             : this(utilities)

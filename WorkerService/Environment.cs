@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 
-namespace WorkerService.KinesisNet.Model
+namespace WorkerService
 {
     public class Environment
     {
@@ -24,7 +20,7 @@ namespace WorkerService.KinesisNet.Model
         public PrivateEnvionment Private { get; }
 
         public PublicEnvironment Public { get; }
-
+        
         public class PrivateEnvionment
         {
             public PrivateEnvionment(string awsSecret, string awsSessionToken)

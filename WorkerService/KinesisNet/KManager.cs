@@ -1,5 +1,6 @@
 ﻿using System;
 using Amazon;
+using Amazon.DynamoDBv2;
 using Amazon.Kinesis;
 using Serilog;
 using WorkerService.KinesisNet.Interface;
@@ -9,7 +10,7 @@ namespace WorkerService.KinesisNet
 {
     public class KManager : IKManager
     {
-        private readonly AmazonKinesisClient _client;
+        private readonly IAmazonKinesis _client;
 
         private IConsumer _consumer = null;
         private IProducer _producer = null;
@@ -54,7 +55,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _client = new AmazonKinesisClient(awsKey, awsSecret, config);
@@ -72,7 +73,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _client = new AmazonKinesisClient(awsKey, awsSecret, awsSessionToken, config);
@@ -86,11 +87,32 @@ namespace WorkerService.KinesisNet
             Log.Information("Instantiated KManager");
         }
 
+        public KManager(IAmazonDynamoDB dynamoClient, IAmazonKinesis kinesisClient, string streamName, string workerId)
+        {
+            if (workerId == null)
+            {
+                workerId = System.Environment.MachineName;
+            }
+
+            _client = kinesisClient;
+
+            _utilities = new Utilities(_client, workerId);
+            _dynamoDb = new DynamoDB(dynamoClient,  _utilities);
+
+            _producer = new Producer(_client, _utilities);
+            _consumer = new Consumer(_client, _utilities, _dynamoDb);
+
+
+            _utilities.SetStreamName(streamName);
+
+            Log.Information("Instantiated KManager");
+        }
+
         private void Init(string workerId = null)
         {
             if (workerId == null)
             {
-                workerId = Environment.MachineName;
+                workerId = System.Environment.MachineName;
             }
 
             _utilities = new Utilities(_client, workerId);

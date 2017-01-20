@@ -14,7 +14,7 @@ namespace WorkerService.KinesisNet
 {
     internal class Consumer : IConsumer
     {
-        private readonly AmazonKinesisClient _client;
+        private readonly IAmazonKinesis _client;
         private readonly IUtilities _utilities;
         private readonly IDynamoDB _dynamoDb;
 
@@ -25,7 +25,7 @@ namespace WorkerService.KinesisNet
 
         private volatile bool _isRunning;
 
-        public Consumer(AmazonKinesisClient client, IUtilities utilities, IDynamoDB dynamoDb)
+        public Consumer(IAmazonKinesis client, IUtilities utilities, IDynamoDB dynamoDb)
         {
             _client = client;
             _utilities = utilities;

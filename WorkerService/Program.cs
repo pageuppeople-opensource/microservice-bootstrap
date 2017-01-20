@@ -1,6 +1,8 @@
 using System;
 using System.Reflection;
 using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.Kinesis;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
@@ -10,10 +12,10 @@ using WorkerService.EventProcessors;
 using WorkerService.KinesisNet;
 using WorkerService.KinesisNet.Interface;
 using WorkerService.KinesisNet.Model;
+using WorkerService.KinesisNet.Persistance;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
 using static System.Console;
-using Environment = WorkerService.KinesisNet.Model.Environment;
 
 namespace WorkerService
 {
@@ -64,18 +66,17 @@ namespace WorkerService
         public static void StartListeningForEvents()
         {
             var kinesisStreamName = "RoleStream.LIVE";
-            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name;
+            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Public.Env;
 
             Log.Information("KManager variables:");
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
-            _kManager = new KManager(_environment.Public.AwsKey, 
-                _environment.Private.AwsSecret, 
-                kinesisStreamName, 
-                RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion), 
-                _environment.Private.AwsSessionToken, 
-                kinesisWorkerId);
+            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion)});
+
+            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
+
+            _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
             _kManager.Consumer.Start(new RolesEventProcessor());
         }
