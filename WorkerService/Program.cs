@@ -39,7 +39,7 @@ namespace WorkerService
                 System.Environment.GetEnvironmentVariable("AWS_SESSION_TOKEN"),
                 System.Environment.GetEnvironmentVariable("REGION"),
                 System.Environment.GetEnvironmentVariable("DC"),
-                System.Environment.GetEnvironmentVariable("Env")
+                System.Environment.GetEnvironmentVariable("ENV")
             );
             
             Log.Information("{@Environment}", _environment.Public);

@@ -10,8 +10,6 @@ namespace WorkerService.KinesisNet.Model
     {
         public Environment(string awsKey, string awsSecret, string awsSessionToken, string awsRegion, string dc, string env)
         {
-            if (string.IsNullOrWhiteSpace(awsSessionToken))
-                throw new ArgumentException("Value cannot be null or whitespace.", nameof(awsSessionToken));
             if (string.IsNullOrWhiteSpace(awsRegion))
                 throw new ArgumentException("Value cannot be null or whitespace.", nameof(awsRegion));
             if (string.IsNullOrWhiteSpace(dc))
@@ -33,15 +31,13 @@ namespace WorkerService.KinesisNet.Model
             {
                 if (string.IsNullOrWhiteSpace(awsSecret))
                     throw new ArgumentException("Value cannot be null or whitespace.", nameof(awsSecret));
-                if (string.IsNullOrWhiteSpace(awsSessionToken))
-                    throw new ArgumentException("Value cannot be null or whitespace.", nameof(awsSessionToken));
 
                 AwsSecret = awsSecret;
-                AwsSessionToken = awsSessionToken;
+                AwsSessionToken = string.IsNullOrWhiteSpace(awsSessionToken) ? string.Empty : awsSessionToken;
             }
 
-            public string AwsSecret { get; set; }
-            public string AwsSessionToken { get; set; }
+            public string AwsSecret { get; }
+            public string AwsSessionToken { get; }
         }
 
         public class PublicEnvironment
