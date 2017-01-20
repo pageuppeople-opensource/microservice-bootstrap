@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebService.Controllers
 {
@@ -8,7 +9,11 @@ namespace WebService.Controllers
         [HttpGet]
         public StatusCodeResult Get()
         {
-            return Ok();
+            // Return OK if current minute is even
+            // otherwise return NotFound.
+            if (DateTime.UtcNow.Minute % 2 == 0)
+                return Ok();
+            return NotFound();
         }
     }
     

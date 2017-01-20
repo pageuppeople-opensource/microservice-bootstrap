@@ -1,18 +1,13 @@
-using System;
+using System.Threading;
 using System.Reflection;
 using Amazon;
 using Microsoft.Extensions.Configuration;
 using Serilog;
-using Serilog.Events;
-using Serilog.Formatting.Json;
-using SeriLog.LogSanitizingFormatter;
 using WorkerService.EventProcessors;
 using WorkerService.KinesisNet;
-using WorkerService.KinesisNet.Interface;
-using WorkerService.KinesisNet.Model;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
-using static System.Console;
+
 using Environment = WorkerService.KinesisNet.Model.Environment;
 
 namespace WorkerService
@@ -28,7 +23,6 @@ namespace WorkerService
                 .WriteTo.LiterateConsole()
                 .CreateLogger();
 
-            //new LoggerConfiguration().WriteTo.Co
             _environment = new Environment
             (
                 System.Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
@@ -49,11 +43,24 @@ namespace WorkerService
                                     .Build();
 
             StartListeningForEvents();
+            ToggleHealth();
 
             // sleep indefinitely
             Sleep(Infinite);
 
             StopListeningToEvents();
+
+        }
+
+        private static void ToggleHealth()
+        {
+            TimerCallback log10Errors = (_) =>
+            {
+                for (var i = 0; i < 10; i++)
+                    Log.Error("Demo error occured!");
+            };
+
+            new Timer(log10Errors, null, 0, 60000);
         }
 
         private static void StopListeningToEvents()
@@ -70,7 +77,8 @@ namespace WorkerService
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
-            _kManager = new KManager(_environment.Public.AwsKey, 
+            _kManager = new KManager(
+                _environment.Public.AwsKey, 
                 _environment.Private.AwsSecret, 
                 kinesisStreamName, 
                 RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion), 
