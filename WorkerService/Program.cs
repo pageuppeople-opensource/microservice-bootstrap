@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Kinesis;
@@ -75,7 +76,7 @@ namespace WorkerService
 
             _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
-            _kManager.Consumer.Start(new RolesEventProcessor());
+            Task.Run(() => _kManager.Consumer.Start(new RolesEventProcessor()));
         }
     }
 }
