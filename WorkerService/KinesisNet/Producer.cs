@@ -11,10 +11,10 @@ namespace WorkerService.KinesisNet
 {
     internal class Producer : IProducer
     {
-        private readonly AmazonKinesisClient _client;
+        private readonly IAmazonKinesis _client;
         private readonly IUtilities _utilities;
 
-        public Producer(AmazonKinesisClient client, IUtilities utilities)
+        public Producer(IAmazonKinesis client, IUtilities utilities)
         {
             _client = client;
             _utilities = utilities;

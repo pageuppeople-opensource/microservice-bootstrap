@@ -26,7 +26,7 @@ namespace WorkerService.KinesisNet.Model
         public PrivateEnvionment Private { get; }
 
         public PublicEnvironment Public { get; }
-
+        
         public class PrivateEnvionment
         {
             public PrivateEnvionment(string awsSecret, string awsSessionToken)
@@ -67,6 +67,11 @@ namespace WorkerService.KinesisNet.Model
             public string AwsRegion { get; set; }
             public string Dc { get; set; }
             public string Env { get; set; }
+        }
+
+        public bool IsLocal()
+        {
+            return Public.Env != "asdf";
         }
     }
 

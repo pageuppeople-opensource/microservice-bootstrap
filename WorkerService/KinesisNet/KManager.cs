@@ -1,5 +1,6 @@
 ﻿using System;
 using Amazon;
+using Amazon.DynamoDBv2;
 using Amazon.Kinesis;
 using Serilog;
 using WorkerService.KinesisNet.Interface;
@@ -9,7 +10,7 @@ namespace WorkerService.KinesisNet
 {
     public class KManager : IKManager
     {
-        private readonly AmazonKinesisClient _client;
+        private readonly IAmazonKinesis _client;
 
         private IConsumer _consumer = null;
         private IProducer _producer = null;
@@ -79,6 +80,24 @@ namespace WorkerService.KinesisNet
 
             _utilities = new Utilities(_client, workerId);
             _dynamoDb = new DynamoDB(awsKey, awsSecret, awsSessionToken, config.RegionEndpoint, _utilities);
+
+            _producer = new Producer(_client, _utilities);
+            _consumer = new Consumer(_client, _utilities, _dynamoDb);
+
+            Log.Information("Instantiated KManager");
+        }
+
+        public KManager(IAmazonDynamoDB dynamoClient, IAmazonKinesis kinesisClient, string workerId)
+        {
+            if (workerId == null)
+            {
+                workerId = Environment.MachineName;
+            }
+
+            _client = kinesisClient;
+
+            _utilities = new Utilities(_client, workerId);
+            _dynamoDb = new DynamoDB(dynamoClient,  _utilities);
 
             _producer = new Producer(_client, _utilities);
             _consumer = new Consumer(_client, _utilities, _dynamoDb);

@@ -1,6 +1,8 @@
 using System;
 using System.Reflection;
 using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.Kinesis;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
@@ -10,6 +12,7 @@ using WorkerService.EventProcessors;
 using WorkerService.KinesisNet;
 using WorkerService.KinesisNet.Interface;
 using WorkerService.KinesisNet.Model;
+using WorkerService.KinesisNet.Persistance;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
 using static System.Console;
@@ -70,12 +73,15 @@ namespace WorkerService
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
-            _kManager = new KManager(_environment.Public.AwsKey, 
-                _environment.Private.AwsSecret, 
-                kinesisStreamName, 
-                RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion), 
-                _environment.Private.AwsSessionToken, 
-                kinesisWorkerId);
+            var dynamoClient = _environment.IsLocal() 
+                ? new AmazonDynamoDBClient(_environment.Public.AwsKey, _environment.Private.AwsSecret, _environment.Private.AwsSessionToken, new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion) }) 
+                : new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion)});
+
+            var kinesisClient = _environment.IsLocal()
+                ? new AmazonKinesisClient(_environment.Public.AwsKey, _environment.Private.AwsSecret, _environment.Private.AwsSessionToken, new AmazonKinesisConfig { RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion) })
+                : new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.Public.AwsRegion )});
+
+            _kManager = new KManager(dynamoClient, kinesisClient, kinesisWorkerId);
 
             _kManager.Consumer.Start(new RolesEventProcessor());
         }

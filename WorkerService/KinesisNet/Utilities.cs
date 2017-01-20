@@ -14,7 +14,7 @@ namespace WorkerService.KinesisNet
 {
     internal class Utilities : IUtilities
     {
-        private readonly AmazonKinesisClient _client;
+        private readonly IAmazonKinesis _client;
 
         private string _streamName;
         private string _workerId;
@@ -25,7 +25,7 @@ namespace WorkerService.KinesisNet
 
         private static ConcurrentDictionary<string, string> _workingConsumer; 
 
-        public Utilities(AmazonKinesisClient client, string workerId)
+        public Utilities(IAmazonKinesis client, string workerId)
         {
             _client = client;
 
