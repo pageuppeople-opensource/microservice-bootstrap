@@ -242,7 +242,7 @@ namespace WorkerService.KinesisNet.Persistance
             }
             catch (Exception e)
             {
-                Log.Debug(e, "Could not connect to DynamoDB");
+                Log.Error(e, "Could not connect to DynamoDB");
 
                 throw;
             }
