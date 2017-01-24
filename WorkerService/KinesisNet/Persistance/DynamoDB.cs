@@ -53,6 +53,7 @@ namespace WorkerService.KinesisNet.Persistance
 
         public async Task Init()
         {
+            Log.Debug("Entering init");
             await CreateTableIfNotExists();
         }
 
@@ -160,16 +161,19 @@ namespace WorkerService.KinesisNet.Persistance
 
         private async Task CreateTableIfNotExists()
         {
+            Log.Debug("Entering CreateTableIfNot Exists")
             var listTablesRequest = new ListTablesRequest { ExclusiveStartTableName = TableName.Substring(0, 6) };
+            Log.Debug("Created ListTables request");
 
             try
             {
-
                 Log.Information("Checking if kinesis_checkpoint table exists");
 
                 var listTables = await _client.ListTablesAsync(listTablesRequest);
 
-                Log.Debug("{@listTables}", listTables);
+                Log.Information("Request complete");
+
+               Log.Debug("{@listTables}", listTables);
 
                 if (listTables.TableNames.Contains(TableName))
                 {
@@ -179,6 +183,8 @@ namespace WorkerService.KinesisNet.Persistance
                 }
                 else
                 {
+
+                    Log.Debug("Table does not exist");
                     var request = new CreateTableRequest()
                     {
                         TableName = TableName,

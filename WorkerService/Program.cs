@@ -69,6 +69,7 @@ namespace WorkerService
 
         public static void StartListeningForEvents()
         {
+            Log.Debug("Entering StartListeningForEvents");
             var kinesisStreamName = "RoleStream.LIVE";
             var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Env;
 
@@ -76,12 +77,15 @@ namespace WorkerService
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
+            Log.Debug("Creating Dyanmo client");
             var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion)});
-
+            Log.Debug("Creating Kinesis client")
             var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion )});
 
+            Log.Debug("Starting Kmanager");
             _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
+            Log.Debug("Starting consumer");
             Task.Run(() => _kManager.Consumer.Start(new RolesEventProcessor()));
         }
     }
