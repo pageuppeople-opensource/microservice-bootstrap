@@ -89,17 +89,21 @@ namespace WorkerService.KinesisNet
 
         public KManager(IAmazonDynamoDB dynamoClient, IAmazonKinesis kinesisClient, string streamName, string workerId)
         {
+            Log.Debug("Entering KManager ctor");
             if (workerId == null)
             {
                 workerId = System.Environment.MachineName;
             }
 
             _client = kinesisClient;
-
+            Log.Debug("Creating Utitlities");
             _utilities = new Utilities(_client, workerId);
+            Log.Debug("Creating Dynamo presistance");
             _dynamoDb = new DynamoDB(dynamoClient,  _utilities);
 
+            Log.Debug("Creating Producer")
             _producer = new Producer(_client, _utilities);
+            Log.Debug("Creating Consumer");
             _consumer = new Consumer(_client, _utilities, _dynamoDb);
 
 
