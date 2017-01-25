@@ -161,7 +161,7 @@ namespace WorkerService.KinesisNet.Persistance
 
         private async Task CreateTableIfNotExists()
         {
-            Log.Debug("Entering CreateTableIfNot Exists")
+            Log.Debug("Entering CreateTableIfNot Exists");
             var listTablesRequest = new ListTablesRequest { ExclusiveStartTableName = TableName.Substring(0, 6) };
             Log.Debug("Created ListTables request");
 
