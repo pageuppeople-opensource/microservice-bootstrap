@@ -101,7 +101,7 @@ namespace WorkerService.KinesisNet
             Log.Debug("Creating Dynamo presistance");
             _dynamoDb = new DynamoDB(dynamoClient,  _utilities);
 
-            Log.Debug("Creating Producer")
+            Log.Debug("Creating Producer");
             _producer = new Producer(_client, _utilities);
             Log.Debug("Creating Consumer");
             _consumer = new Consumer(_client, _utilities, _dynamoDb);

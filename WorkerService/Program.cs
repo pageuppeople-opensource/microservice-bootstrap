@@ -79,7 +79,7 @@ namespace WorkerService
 
             Log.Debug("Creating Dyanmo client");
             var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion)});
-            Log.Debug("Creating Kinesis client")
+            Log.Debug("Creating Kinesis client");
             var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion )});
 
             Log.Debug("Starting Kmanager");
