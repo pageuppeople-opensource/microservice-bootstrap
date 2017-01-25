@@ -68,6 +68,8 @@ namespace WorkerService.KinesisNet
             _currentRecordsProcessing = 0;
             _cancellationTokenSource = new CancellationTokenSource();
 
+
+            Log.Debug("Beginning to process shards");
             Task.Run(() => ProcessShardsAsync(recordProcessor));
 
             return Result.Create(true, "Processing System");
@@ -87,6 +89,7 @@ namespace WorkerService.KinesisNet
 
         private async Task ProcessShardsAsync(IRecordProcessor processor)
         {
+            Log.Debug("Beginning ProcessShardsAsync");
             try
             {
                 var processShardsTask = new ConcurrentDictionary<Task<RecordResponse>, KShard>();
@@ -95,21 +98,27 @@ namespace WorkerService.KinesisNet
 
                 while (!_cancellationTokenSource.IsCancellationRequested)
                 {
+                    Log.Debug("Shards to process task count is {0}", processShardsTask.Count);
                     if (processShardsTask.Count > 0)
                     {
+                        Log.Debug("We have {0} tasks ", processShardsTask.Count);
                         var task = await Task.WhenAny(processShardsTask.Select(m => m.Key)).WithCancellation(_cancellationTokenSource.Token);
 
                         KShard shard;
                         if (task != null && task.IsCompleted && !task.IsCanceled && !task.IsFaulted)
                         {
+                            Log.Debug("Tasks can be processed");
                             Interlocked.Add(ref _currentRecordsProcessing, 1);
 
                             if (processShardsTask.TryRemove(task, out shard))
                             {
+                                Log.Debug("Got a task to process");
                                 var record = await task;
 
+                                Log.Debug("Got a record to process");
                                 if (record != null && record.GetRecordsResponse.Records.Any())
                                 {
+                                    Log.Debug("Processing Shard {0}", shard.ShardId);
                                     processor.Process(shard.ShardId, record.GetRecordsResponse.Records.LastOrDefault().SequenceNumber, shard.LastUpdateUtc, record.GetRecordsResponse.Records, SaveCheckpoint);
 
                                     if (record.GetRecordsResponse.NextShardIterator != null)
