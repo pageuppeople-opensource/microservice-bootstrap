@@ -173,7 +173,7 @@ namespace WorkerService.KinesisNet.Persistance
 
                 Log.Information("Request complete");
 
-               Log.Debug("{@listTables}", listTables);
+                Log.Debug("{@listTables}", listTables);
 
                 if (listTables.TableNames.Contains(TableName))
                 {
