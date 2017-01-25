@@ -28,8 +28,11 @@ namespace WorkerService
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
                 .WriteTo.LiterateConsole()
                 .CreateLogger();
+
+            Log.Debug("Testing debug logging");
 
             //new LoggerConfiguration().WriteTo.Co
             _environment = new Environment
