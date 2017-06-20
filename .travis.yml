@@ -1,55 +1,40 @@
-# Get me ubunty 14.04 trusty
+﻿# Get me ubunty 14.04 trusty
 sudo: required
 dist: trusty
 
 services:
   - docker
 
-
 env:
   global:
-  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  - DOTNET_CLI_TELEMETRY_OPTOUT: 1
   # DC0 keys
   - secure: "iqsCxkZ+UMosYGb9cgj+zu6zwGzqwvSZoWGiMdcMVY9m5londnnoH18xjCze1WOkpQCaVOplsR7UdCHSH0avrj6S0QULtz/t8uwtfyFX3viyJWHWmuduXAA9w3vsLOuiij/1AwqszIU3YWXBq8r7Pm08O5Qg7NsYVDga9IAKpPvO4NDW+b/DcFD9XhxZ+Uau0J5EYsfAvAuzrhFdvlp4wb3Eh+7A6kYfxPLTvEmcc/OIT+ta9vIj6ZfmDYyrxcqH09EzON7Kz2g46OqiqNq0CnBrIYmfxnH4PwAAr1TVazYOvWDYNVQ2jOQhuiB8Q45g0EpcwcDNN123uvEwQh4gfSUafaBhkqxfa5oyI5XRTXd+4TIbIeUM4IRbYCz2WHctllyn5t0OtSzfPt8vPPBvV+9hBivmovVBMA0HBvJPIhwRnPmOx1xPs3IwIemSFkcLfr8UerfIzRwdTqg7AagashLYDJi6JVFbFdpHMuZa19/lIJ4zRrH2dI0vsAv7A6iWIAz3xl8A4SKayD2CT+IPj5kvTfQeqUWEHy715kcK+2LQ7ZcewMA4PsS+xFSctvQKjUhRwIIrtpsKDZO5V+Rz+9lEan/QDak4WD7+xstnww62cB/QdGtaIoBUPCt6mDkcainHxwjVIZnD3Ic8EO3DdmyZSLPzKGQlBt4af8i5YSE=" 
   - secure: "02VOWRiygvKpZDCsvMEtRqCupz7+qpDwz2X7Pj78Deo8uXx1R7HAFmsRZWe9FdUVWct/Kzu3Wb5iRlRbyJyA5vYxav8AHvz+x4WDG6R1HHL+FymCDUJToTgIWf9YekbVi3O6th2rAMfPOXObOg50EOZBf2XU6A1X3L+k3uSb3lshbBl8KQHr8NTbdsWJmk3rdRM0GVYr6uwMKJEk56mONX//Brk7nk4IgwQXtSFhajqf0g1qPHklyCznDmB4xknx0Hp7JwE2jcbchpsv3YEbp0mRrsbkNYSMJ9yBH37htADyugfqvFL4SVfc6c3YijtXrOjnM9LWrJKcS1gzzOxrTfM5hdp6lnOYcD7mjc0zALVmjvuUaPb/CtPZ8FyS1SU+MRKgO51IWfckuw06wA1LM5M1iwWIhKBbYA96304FLubVUwZzlPJr61u2dFK5MsxXemJZMPuYmbMjpKMyf4wajSGZKofUClhoFCh6x9gluWPe/hpoJ5iSHFZAwtPUzVOuif1k5LR85Kfw2H4rVlJQPM55GGFHgC0GbDOaH7sf9/MNkzXUb4kRy0rUMbOX5lhcZw9KRdZV+mIPooXmrwIv6aCLkfr1XNrkJyaVS27NaYjjrKC5cnVEOFDuZcw9/T2NO8U9ADBAAVXwTo+WM83xOWFiRx9AVxqCgI0n51wQRms="
   # DC2-5 keys
   - secure: "iK/Q86T5eslW62ByWxHSElsHRydPPmIV0N/5hcgNKj39pd/FdoHfT+FH7kc4QYbyouBbQnqujPKK2ncM3bwQv86rBx1qg9oGx00OyOcMjq6EOlZ3K/KEQwt3sAkelq2fNcHtvvp1i6iZA2U4WSYHgPrdr0tsRw0HwFQrPcuHAqEBg3WQ7MKzIQPxsesw1tce87fPkj7Z13PCSSf05MomGE+U4MqOXAUK1JOfVKjDuANQbMMHsR5HhOI6mZqnrTbrhb7kkRpaWDgzPOGxoJ3Z8V7IFJVopuXArzzSiqdA3cESOvFRyzQTQOicRmXOa7J4Wf6hLuKB7HkWbWRsGoUbgPOm6HXe7y+kXehsCDL3v4Ug43wQ13tK6dGvPtQcp/cNUQPxR+/dfHoNPdrvi8AporwzbxT/YrqPErEW/lr3B6xKN28lyVMrr/q3OVOX2axpGMr9ZvwhzBlyK9j4Q7wrxGDGKmqEmycCYGB5cz/LyPSS+SUjbSNOexNu3/RtxhVlGGIbyh5KH7I69QbuBpeyLbZLjE+w1bduI4hgba4004LuUcFX8syp2kFusBAdSwjWgRoDGGjCpRxfbKpguUU/rPrARAXrNhx2B7JFJepF2XvUjS3wWe3OmZCreyE6spf7h+rVBH96Dh9pLch3ryu/k5zSQFUT/VQthWsDgUuzRZA="
   - secure: "k3lW77Syz8XKfvHBwIaVdQ6kW1ywlh0Vcc7pOlXB+iQ1FBouOWCrxZ5iUONcpPuWGBcaTKbTIpopjeqBrdTDcLXdkWQvMyFWdTiAKIDDxywrMo0gaF3y3ZhUJOIjwipQ9IvBsxzVmnJql9qL+D9FHwuiW5aBU7JDv6ANUkItZBh1olUebN0foh0Q4/c9PO0PWCfCpSz0RU0sWI7Zw4SsDat7gIFrp6OJ3AQtOV2I19ocufRtNkOCAlhsusmlPJGb7907lMhfX2iSLa1qCVRc3L/PYNwRNh8eCYom6t6MFEUnt5pvpYFTvTWYBxhml1X+zteQVWggZ4R7vBrB0nCcLyT3Nz/r+MkM03ademvixBku7segsAHrBOZny9NB82M4A25xcHas90ey0cNhM1co1mUh24LMcA3/Djxb3M/Y07u3QWKNSzhu2tK1MlSeOufaFSTJihQoDR9LQgbfuH97EP7b4J0EG63Kvy9E+Mo3+2miVNiEEoYCa1OcEijJ6/lxLpqcnnY7RJR0Liq+L/pPMd3PycJKwjxoJ79luh/c1k/MkaMfDDZBd7a3Wupzozy7Eq6obcSy9qvaw2xkgGg/2QNNTIr8niTHybcCJg7ZnZNZzCDwYBwfAjDa/rjW+EeIA8mK5go0LK8CDOq9x/xNHGM0I5hrE1uEGWACqnGW6t0="
-  # TODO get DC6 and DC7 keys
-  - BUILD_NO=$TRAVIS_BUILD_NUMBER
 
 before_install:
-  - chmod +x deploy.sh
   # set up dotnet
   - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
   - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
   - sudo apt-get update
-  - sudo apt-get install -y dotnet-dev-1.0.0-preview2.1-003177
-  # set up aws cli
+  - sudo apt-get install -y dotnet-dev-1.0.4
+    # set up aws cli
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 
 install:
   # docker build webservice
-  - docker build -t microservice-bootstrap-webservice ./WebService
-  # docker build workerservice
-  - docker build -t microservice-bootstrap-workerservice ./WorkerService
+  - docker-compose build
 
 script:
   - dotnet restore
   # WebService test
-  - dotnet test ./WebService.UnitTests/ -parallel none
-  # - run docker container
-  # - run any integration tests on the container using scripts
+  - dotnet test ./WebService.UnitTests/WebService.UnitTests.csproj
   # WorkerService test
-  - dotnet test ./WorkerService.UnitTests/ -parallel none
-  # - run docker container
-  # - run any integration tests on the container using scripts
+  - dotnet test ./WorkerService.UnitTests/WorkerService.UnitTests.csproj
 
 branches:
   only:
   - master
-
-after_success: 
-  - ./deploy.sh
