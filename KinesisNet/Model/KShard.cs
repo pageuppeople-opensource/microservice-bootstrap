@@ -3,7 +3,7 @@ using System.Linq;
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
 
-namespace WorkerService.KinesisNet.Model
+namespace KinesisNet.Model
 {
     internal class KShard
     {

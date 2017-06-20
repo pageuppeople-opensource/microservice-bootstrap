@@ -1,4 +1,4 @@
-﻿namespace WorkerService.KinesisNet.Model
+﻿namespace KinesisNet.Model
 {
     public class Result
     {

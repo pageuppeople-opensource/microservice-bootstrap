@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
 using Serilog;
-using WorkerService.KinesisNet.Interface;
+using KinesisNet.Interface;
 
-namespace WorkerService.KinesisNet
+namespace KinesisNet
 {
     internal class Utilities : IUtilities
     {

@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WorkerService.KinesisNet
+namespace KinesisNet
 {
     /// <summary>
     /// Used to task a async task and run it without the async part.

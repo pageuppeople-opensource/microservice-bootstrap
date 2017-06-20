@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using Amazon.Kinesis.Model;
 
-namespace WorkerService.KinesisNet.Model
+namespace KinesisNet.Model
 {
     internal class RecordResponse
     {

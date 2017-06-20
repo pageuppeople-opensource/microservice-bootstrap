@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Amazon.Kinesis.Model;
 
-namespace WorkerService.KinesisNet.Interface
+namespace KinesisNet.Interface
 {
     public interface IProducer
     {

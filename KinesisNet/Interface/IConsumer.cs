@@ -1,7 +1,8 @@
 ﻿using System.Threading.Tasks;
-using WorkerService.KinesisNet.Model;
+using KinesisNet.Interface;
+using KinesisNet.Model;
 
-namespace WorkerService.KinesisNet.Interface
+namespace KinesisNet.Interface
 {
     public interface IConsumer
     {

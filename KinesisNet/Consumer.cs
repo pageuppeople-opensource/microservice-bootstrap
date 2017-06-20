@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
 using Serilog;
-using WorkerService.KinesisNet.Extensions;
-using WorkerService.KinesisNet.Interface;
-using WorkerService.KinesisNet.Model;
+using KinesisNet.Extensions;
+using KinesisNet.Interface;
+using KinesisNet.Model;
 
-namespace WorkerService.KinesisNet
+namespace KinesisNet
 {
     internal class Consumer : IConsumer
     {

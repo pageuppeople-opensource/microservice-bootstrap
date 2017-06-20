@@ -5,9 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
-using WorkerService.KinesisNet.Interface;
+using KinesisNet.Interface;
 
-namespace WorkerService.KinesisNet
+namespace KinesisNet
 {
     internal class Producer : IProducer
     {

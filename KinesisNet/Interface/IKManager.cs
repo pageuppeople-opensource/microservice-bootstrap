@@ -1,4 +1,4 @@
-﻿namespace WorkerService.KinesisNet.Interface
+﻿namespace KinesisNet.Interface
 {
     public interface IKManager
     {

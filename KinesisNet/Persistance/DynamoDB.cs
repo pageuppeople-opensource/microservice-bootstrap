@@ -9,10 +9,10 @@ using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Serilog;
-using WorkerService.KinesisNet.Interface;
-using WorkerService.KinesisNet.Model;
+using KinesisNet.Interface;
+using KinesisNet.Model;
 
-namespace WorkerService.KinesisNet.Persistance
+namespace KinesisNet.Persistance
 {
     internal class DynamoDB : IDynamoDB
     {

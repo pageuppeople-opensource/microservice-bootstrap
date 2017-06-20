@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Amazon.Kinesis.Model;
-using WorkerService.KinesisNet.Interface;
+using KinesisNet.Interface;
 
 namespace WorkerService.EventProcessors
 {
