@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WorkerService.KinesisNet.Model;
+using KinesisNet.Model;
 
-namespace WorkerService.KinesisNet.Interface
+namespace KinesisNet.Interface
 {
     internal interface IDynamoDB
     {

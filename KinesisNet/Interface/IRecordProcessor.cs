@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Amazon.Kinesis.Model;
 
-namespace WorkerService.KinesisNet.Interface
+namespace KinesisNet.Interface
 {
     public interface IRecordProcessor
     {

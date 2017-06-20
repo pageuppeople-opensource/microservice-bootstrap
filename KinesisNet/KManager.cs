@@ -3,10 +3,10 @@ using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Kinesis;
 using Serilog;
-using WorkerService.KinesisNet.Interface;
-using WorkerService.KinesisNet.Persistance;
+using KinesisNet.Interface;
+using KinesisNet.Persistance;
 
-namespace WorkerService.KinesisNet
+namespace KinesisNet
 {
     public class KManager : IKManager
     {
@@ -73,7 +73,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = System.Environment.MachineName;
+                workerId = Environment.MachineName;
             }
 
             _client = new AmazonKinesisClient(awsKey, awsSecret, awsSessionToken, config);
@@ -92,7 +92,7 @@ namespace WorkerService.KinesisNet
             Log.Debug("Entering KManager ctor");
             if (workerId == null)
             {
-                workerId = System.Environment.MachineName;
+                workerId = Environment.MachineName;
             }
 
             _client = kinesisClient;
@@ -116,7 +116,7 @@ namespace WorkerService.KinesisNet
         {
             if (workerId == null)
             {
-                workerId = System.Environment.MachineName;
+                workerId = Environment.MachineName;
             }
 
             _utilities = new Utilities(_client, workerId);

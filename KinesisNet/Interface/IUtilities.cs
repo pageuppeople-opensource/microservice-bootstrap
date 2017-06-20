@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Amazon.Kinesis.Model;
 using Serilog;
 
-namespace WorkerService.KinesisNet.Interface
+namespace KinesisNet.Interface
 {
     public interface IUtilities
     {

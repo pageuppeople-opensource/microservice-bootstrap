@@ -1,29 +1,21 @@
-using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Kinesis;
 using Microsoft.Extensions.Configuration;
 using Serilog;
-using Serilog.Events;
-using Serilog.Formatting.Json;
-using SeriLog.LogSanitizingFormatter;
 using WorkerService.EventProcessors;
-using WorkerService.KinesisNet;
-using WorkerService.KinesisNet.Interface;
-using WorkerService.KinesisNet.Model;
-using WorkerService.KinesisNet.Persistance;
+using KinesisNet;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
-using static System.Console;
 
 namespace WorkerService
 {
     public class Program
     {
-        private static Environment _environment;
-        private static KManager _kManager;
+        private static Environment environment;
+        private static KManager kManager;
 
         public static void Main(string[] args)
         {
@@ -34,8 +26,7 @@ namespace WorkerService
 
             Log.Debug("Testing debug logging");
 
-            //new LoggerConfiguration().WriteTo.Co
-            _environment = new Environment
+            environment = new Environment
             (
                 System.Environment.GetEnvironmentVariable("REGION"),
                 System.Environment.GetEnvironmentVariable("DC"),
@@ -47,7 +38,7 @@ namespace WorkerService
                 .InformationalVersion
             );
             
-            Log.Information("{@Environment}", _environment);
+            Log.Information("{@Environment}", environment);
 
             Log.Information("Starting configuration");
 
@@ -67,29 +58,29 @@ namespace WorkerService
 
         private static void StopListeningToEvents()
         {
-            _kManager.Consumer.Stop();
+            kManager.Consumer.Stop();
         }
 
         public static void StartListeningForEvents()
         {
             Log.Debug("Entering StartListeningForEvents");
             var kinesisStreamName = "RoleStream.LIVE";
-            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + _environment.Env;
+            var kinesisWorkerId = Assembly.GetEntryAssembly().GetName().Name + "-" + environment.Env;
 
             Log.Information("KManager variables:");
             Log.Information($"  StreamName: {kinesisStreamName}");
             Log.Information($"  WorkerId: {kinesisWorkerId}");
 
             Log.Debug("Creating Dyanmo client");
-            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion)});
+            var dynamoClient = new AmazonDynamoDBClient(new AmazonDynamoDBConfig{RegionEndpoint = RegionEndpoint.GetBySystemName(environment.AwsRegion)});
             Log.Debug("Creating Kinesis client");
-            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(_environment.AwsRegion )});
+            var kinesisClient = new AmazonKinesisClient(new AmazonKinesisConfig{ RegionEndpoint = RegionEndpoint.GetBySystemName(environment.AwsRegion )});
 
             Log.Debug("Starting Kmanager");
-            _kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
+            kManager = new KManager(dynamoClient, kinesisClient, kinesisStreamName, kinesisWorkerId);
 
             Log.Debug("Starting consumer");
-            Task.Run(() => _kManager.Consumer.Start(new RolesEventProcessor()));
+            Task.Run(() => kManager.Consumer.Start(new RolesEventProcessor()));
         }
     }
 }
