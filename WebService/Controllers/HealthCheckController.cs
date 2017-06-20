@@ -2,7 +2,7 @@
 
 namespace WebService.Controllers
 {
-    [Route("/")]
+    [Route("/healthcheck")]
     public class HealthCheckController : Controller
     {
         [HttpGet]
