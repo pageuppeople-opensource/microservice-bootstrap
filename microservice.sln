@@ -8,10 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
-		deploy.sh = deploy.sh
 		docker-compose.yml = docker-compose.yml
-		ecs-deploy-update-task-definition = ecs-deploy-update-task-definition
-		ecs-deploy-wait-for-completion = ecs-deploy-wait-for-completion
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
