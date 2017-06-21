@@ -10,4 +10,4 @@ RUN dotnet build -c Release
 
 EXPOSE 4000
 
-CMD ["dotnet", "run"]
+CMD ["dotnet", "run", "-c", "Release"]
