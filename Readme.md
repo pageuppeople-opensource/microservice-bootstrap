@@ -18,48 +18,10 @@ This will help you have a head start with,
 ## Get Started
 
 1. Clone the repo
-2. Ensure you have Docker toolbox installed. Good news, you don't even need asp.net vNext installed.
-3. Setup environment variables (see below).
-4. Set unique Kinesis stream name and worker id (see below).
-5. Run `docker-compose up -d` from root folder of repo.
+2. Ensure you have [Docker installed](https://store.docker.com/search?offering=community&type=edition).
+3. Have Visual studio 2017 or any other dotnet compatible IDE handy
+5. Run `docker-compose up` from root folder of repo.
 6. Yay all up and running, Done!
-
-### Kinesis 
-
-The code integrates with Kinesis by taking the source of the third-party library, KinesisNet, and updating it to be compatible with the .NET Core framework.
-
-To begin consuming events, a KManager object is created using the appropriate environment variables and defining a unique workerId and kinesisStreamName. We then call kManager.Consume.Start by passing in an IRecordProcessor.
-
-When a bad message comes through ... (To continue)
-
-### Setup environment variables
-
-The environment variables are setup for live when you deploy your infrastructure for the service.
-
-For local deployment, you will have to setup the environment variables on your PC.
-
-The following environment variables are required:
-* AWS_ACCESS_KEY_ID (AWS keys obtained using instructions below)
-* AWS_SECRET_ACCESS_KEY
-* AWS_SESSION_TOKEN
-* ENV (Set as your first name for local - this enables you to identify your own AWS resources)
-* DC (Set as dc0 for local)
-* REGION (Set as 'ap-southeast-2' for local)
-
-### Obtain AWS Credentials
-#### PageUp AWSCredentialsGenerator
-To get this running on your PC follow the instructions [here](https://code.pageuppeople.com/diffusion/CREDGEN/)
-
-#### Without the credentials generator
-1. Generate AWS keys at [status.pageuppeople.com](https://status.pageuppeople.com/AWSToken/Token)
-2. Once keys have been generated, run the bash scripts on that page to copy your credentials to your local environment
-3. Run CopyAWSCredentialsToUserProfile.sh in the root of the project dir
-4. Set a system variable for
-    - ENV = {your_username} (this will become part of your table/queue namespace in AWS in DC0)
-    - DC = DC0 (for local development)
-    - IsLocalServer = true (for local development so that ES hits this API)
-5. Restart VS for changes to take effect (if you get expiry errors while debugging restart visual studio again)
-6. Run the CommentsAPI project in debug
 
 ### What if I just want worker service?
 * Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
@@ -73,22 +35,24 @@ To get this running on your PC follow the instructions [here](https://code.pageu
 
 ### How to ensure it is all good
 
-Head to `http://192.168.99.100:4000/api/values` to see to web service running. Pat your own back!
+#### For Web service
+Head to `http://localhost:4001/healthcheck` to see to web service running. Pat your own back!
 
-Run `docker logs microservicebootstrap_workerservice_1` and see "Hello world" to confirm, your worker service is running. Pay your own back again!
+#### For Worker service
+Run `docker-compose logs` and see "Hello world" to confirm, your worker service is running. Pay your own back again!
 
-### Deployment
+#### Kinesis consumer for Worker service
+Having a kinesis consumer for worker service is an work in progress.
+Current idea is to see if we can have kinesis consumer that can be injected into the worker service using something like @sbarski [KinesisNet](https://github.com/sbarski/KinesisNet). It is supporting core yet, but if you are intersested, please head over to [#29](/../../issues/29).
+
+### Deployment (Need to ensure this is working.. work in progress..)
 
 Uncomment the relevant lines in deploy.sh to get DC2-7 deployment running.
 
 ## TODO
 
 1. include basic dependency injection
-2. Create a dotnet core branch - for enthusiasts
-3. Include code coverage & complexity metrics
-4. document: explain Dynamo table for current state storage of kinesis integration
-5. document: explain what happens when a bad kinesis message comes in
-6. document: missing features from LaunchPad TuneUp
+2. Include code coverage & complexity metrics
 
 ## Template idea
 
@@ -102,9 +66,5 @@ It's a [good video to watch](https://vimeo.com/131632250), if you haven't alread
 
 ### Deployment story
 The template provides way to package the service as Docker container and uses Travis CI for CI.
-However, I won't go into
-1. how to manage the containers or
-2. how to deploy the containers or
-3. how to set up &/ manage docker cluster.
 
 An option is to use Aws ECS / ECR to managing docker cluster and found it to be working (especially when your infra is hosted on aws).
