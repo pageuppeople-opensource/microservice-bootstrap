@@ -24,7 +24,7 @@ This will help you have a head start with,
 6. Yay all up and running, Done!
 
 ### What if I just want worker service?
-* Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
+* Remove WebService & WebService.UnitTests projects from Visual Studio and delete the folder
 * Remove its references from docker compose file
 * Remove sections of travis yml referring to web service
 
