@@ -38,3 +38,9 @@ script:
 branches:
   only:
   - master
+
+#deploy:
+#  provider: script
+#  script: "./deployment/deploy.sh"
+#  on:
+#    branch: master
