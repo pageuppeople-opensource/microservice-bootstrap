@@ -43,7 +43,7 @@ Run `docker-compose logs` and see "Hello world" to confirm, your worker service 
 
 #### Kinesis consumer for Worker service
 Having a kinesis consumer for worker service is an work in progress.
-Current idea is to see if we can have kinesis consumer that can be injected into the worker service using something like @sbarski [KinesisNet](https://github.com/sbarski/KinesisNet). It is supporting core yet, but if you are intersested, please head over to [#29](/../../issues/29).
+Current idea is to see if we can have kinesis consumer that can be injected into the worker service using something like @sbarski [KinesisNet](https://github.com/sbarski/KinesisNet). @sbarski's repo does not support dotnet core but the version in this repo does. If you are intersested, please head over to [#29](/../../issues/29).
 
 ### Deployment (Need to ensure this is working.. work in progress..)
 
