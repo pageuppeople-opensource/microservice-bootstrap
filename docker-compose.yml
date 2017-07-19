@@ -4,7 +4,7 @@
 webservice:
   build: ./WebService
   ports:
-    - 4001:4000
+    - 4000
 
 #
 # WorkerService - microservice
