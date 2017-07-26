@@ -36,7 +36,24 @@ This will help you have a head start with,
 ### How to ensure it is all good
 
 #### For Web service
-Head to `http://localhost:4001/healthcheck` to see to web service running. Pat your own back!
+```
+$docker-compose ps
+                Name                           Command          State            Ports
+-----------------------------------------------------------------------------------------------
+microservicebootstrap_webservice_1      dotnet run -c Release   Up      0.0.0.0:32769->4000/tcp
+microservicebootstrap_workerservice_1   dotnet run -c Release   Up
+```
+
+Get the port number from above command and `curl -i localhost:32769/healthcheck`
+to see to web service running. Pat your own back!
+
+Expected response
+```
+HTTP/1.1 200 OK
+Date: Wed, 19 Jul 2017 01:57:31 GMT
+Content-Length: 0
+Server: Kestrel
+```
 
 #### For Worker service
 Run `docker-compose logs` and see "Hello world" to confirm, your worker service is running. Pay your own back again!
