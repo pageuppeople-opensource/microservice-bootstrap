@@ -6,7 +6,6 @@
     <AssemblyName>WorkerService</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>WorkerService</PackageId>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>

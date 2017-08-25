@@ -7,7 +7,6 @@
     <AssemblyName>WebService</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>WebService</PackageId>
-    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;dnxcore50;portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
