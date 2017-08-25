@@ -1,6 +1,4 @@
-﻿# Get me ubunty 14.04 trusty
-sudo: required
-dist: trusty
+dotnet: 2.0
 
 services:
   - docker
@@ -15,22 +13,14 @@ env:
   - secure: "k3lW77Syz8XKfvHBwIaVdQ6kW1ywlh0Vcc7pOlXB+iQ1FBouOWCrxZ5iUONcpPuWGBcaTKbTIpopjeqBrdTDcLXdkWQvMyFWdTiAKIDDxywrMo0gaF3y3ZhUJOIjwipQ9IvBsxzVmnJql9qL+D9FHwuiW5aBU7JDv6ANUkItZBh1olUebN0foh0Q4/c9PO0PWCfCpSz0RU0sWI7Zw4SsDat7gIFrp6OJ3AQtOV2I19ocufRtNkOCAlhsusmlPJGb7907lMhfX2iSLa1qCVRc3L/PYNwRNh8eCYom6t6MFEUnt5pvpYFTvTWYBxhml1X+zteQVWggZ4R7vBrB0nCcLyT3Nz/r+MkM03ademvixBku7segsAHrBOZny9NB82M4A25xcHas90ey0cNhM1co1mUh24LMcA3/Djxb3M/Y07u3QWKNSzhu2tK1MlSeOufaFSTJihQoDR9LQgbfuH97EP7b4J0EG63Kvy9E+Mo3+2miVNiEEoYCa1OcEijJ6/lxLpqcnnY7RJR0Liq+L/pPMd3PycJKwjxoJ79luh/c1k/MkaMfDDZBd7a3Wupzozy7Eq6obcSy9qvaw2xkgGg/2QNNTIr8niTHybcCJg7ZnZNZzCDwYBwfAjDa/rjW+EeIA8mK5go0LK8CDOq9x/xNHGM0I5hrE1uEGWACqnGW6t0="
 
 before_install:
-  # set up dotnet
-  - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-  - sudo apt-get update
-  - sudo apt-get install -y dotnet-dev-1.0.4
     # set up aws cli
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 
 install:
-  # docker build webservice
   - docker-compose build
 
 script:
-  - dotnet restore
-  # WebService test
   - dotnet test ./WebService.UnitTests/WebService.UnitTests.csproj
   # WorkerService test
   - dotnet test ./WorkerService.UnitTests/WorkerService.UnitTests.csproj
