@@ -1,5 +1,7 @@
 # Microservice Code Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
+## Upgraded to use dotnet core 2.0 
+
 A git repo that gives you a headstart on your own Microservice in [Dotnet Core](https://www.microsoft.com/net/core).
 
 *_The intention is reduce the entry barrier in going with Microservices for .NET folks._*
