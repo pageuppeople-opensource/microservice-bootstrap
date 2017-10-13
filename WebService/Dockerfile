@@ -1,9 +1,14 @@
-FROM microsoft/dotnet:2-sdk
+FROM microsoft/aspnetcore-build:2 AS build-env
 
 COPY . /app
+WORKDIR /app
+RUN dotnet publish -c Release -o /app/out
 
+# Build runtime image
+FROM microsoft/aspnetcore:2
 WORKDIR /app
 
+COPY --from=build-env /app/out ./
 EXPOSE 4000
 
-CMD ["dotnet", "run", "-c", "Release"]
+ENTRYPOINT ["dotnet", "WebService.dll"]
