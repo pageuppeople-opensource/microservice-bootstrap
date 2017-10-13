@@ -4,6 +4,11 @@ mono: none
 
 services:
   - docker
+ 
+addons:
+  apt:
+    packages:
+      - docker-ce # upgrade docker for multi-stage build support
 
 env:
   global:
@@ -13,11 +18,6 @@ env:
   # DC2-5 keys
   - secure: "iK/Q86T5eslW62ByWxHSElsHRydPPmIV0N/5hcgNKj39pd/FdoHfT+FH7kc4QYbyouBbQnqujPKK2ncM3bwQv86rBx1qg9oGx00OyOcMjq6EOlZ3K/KEQwt3sAkelq2fNcHtvvp1i6iZA2U4WSYHgPrdr0tsRw0HwFQrPcuHAqEBg3WQ7MKzIQPxsesw1tce87fPkj7Z13PCSSf05MomGE+U4MqOXAUK1JOfVKjDuANQbMMHsR5HhOI6mZqnrTbrhb7kkRpaWDgzPOGxoJ3Z8V7IFJVopuXArzzSiqdA3cESOvFRyzQTQOicRmXOa7J4Wf6hLuKB7HkWbWRsGoUbgPOm6HXe7y+kXehsCDL3v4Ug43wQ13tK6dGvPtQcp/cNUQPxR+/dfHoNPdrvi8AporwzbxT/YrqPErEW/lr3B6xKN28lyVMrr/q3OVOX2axpGMr9ZvwhzBlyK9j4Q7wrxGDGKmqEmycCYGB5cz/LyPSS+SUjbSNOexNu3/RtxhVlGGIbyh5KH7I69QbuBpeyLbZLjE+w1bduI4hgba4004LuUcFX8syp2kFusBAdSwjWgRoDGGjCpRxfbKpguUU/rPrARAXrNhx2B7JFJepF2XvUjS3wWe3OmZCreyE6spf7h+rVBH96Dh9pLch3ryu/k5zSQFUT/VQthWsDgUuzRZA="
   - secure: "k3lW77Syz8XKfvHBwIaVdQ6kW1ywlh0Vcc7pOlXB+iQ1FBouOWCrxZ5iUONcpPuWGBcaTKbTIpopjeqBrdTDcLXdkWQvMyFWdTiAKIDDxywrMo0gaF3y3ZhUJOIjwipQ9IvBsxzVmnJql9qL+D9FHwuiW5aBU7JDv6ANUkItZBh1olUebN0foh0Q4/c9PO0PWCfCpSz0RU0sWI7Zw4SsDat7gIFrp6OJ3AQtOV2I19ocufRtNkOCAlhsusmlPJGb7907lMhfX2iSLa1qCVRc3L/PYNwRNh8eCYom6t6MFEUnt5pvpYFTvTWYBxhml1X+zteQVWggZ4R7vBrB0nCcLyT3Nz/r+MkM03ademvixBku7segsAHrBOZny9NB82M4A25xcHas90ey0cNhM1co1mUh24LMcA3/Djxb3M/Y07u3QWKNSzhu2tK1MlSeOufaFSTJihQoDR9LQgbfuH97EP7b4J0EG63Kvy9E+Mo3+2miVNiEEoYCa1OcEijJ6/lxLpqcnnY7RJR0Liq+L/pPMd3PycJKwjxoJ79luh/c1k/MkaMfDDZBd7a3Wupzozy7Eq6obcSy9qvaw2xkgGg/2QNNTIr8niTHybcCJg7ZnZNZzCDwYBwfAjDa/rjW+EeIA8mK5go0LK8CDOq9x/xNHGM0I5hrE1uEGWACqnGW6t0="
-
-before_install:
-    # set up aws cli
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
 
 install:
   - docker-compose build
@@ -32,6 +32,11 @@ branches:
   - master
 
 #deploy:
+#  - sudo apt-get purge docker-ce #docker version for multi-stage builds doesn't successfully push to AWS ECR (currently known Travis issue)
+#  - sudo apt-get install docker-ce=17.03.1~ce-0~ubuntu-trusty #install currently supported Travis docker version that can push to AWS ECR
+#  # set up aws cli
+#  - pip install --user awscli
+#  - export PATH=$PATH:$HOME/.local/bin
 #  provider: script
 #  script: "./deployment/deploy.sh"
 #  on:
