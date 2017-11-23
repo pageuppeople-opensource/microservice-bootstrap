@@ -70,7 +70,7 @@ namespace KinesisNet
 
 
             Log.Debug("Beginning to process shards");
-            Task.Run(() => ProcessShardsAsync(recordProcessor));
+            await Task.Run(() => ProcessShardsAsync(recordProcessor));
 
             return Result.Create(true, "Processing System");
         }

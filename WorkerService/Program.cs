@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
-using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
 using Serilog;
+using Serilog.Events;
 using static System.Threading.Thread;
 using static System.Threading.Timeout;
 
@@ -9,24 +8,18 @@ namespace WorkerService
 {
     public class Program
     {
-
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            var configuration = new ConfigurationBuilder()
-                .AddEnvironmentVariables()
-                .AddCommandLine(args)
-                .SetBasePath(Path.Combine(AppContext.BaseDirectory))
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .Build();
-
-            
-            var logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configuration)
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .WriteTo.Console()
                 .CreateLogger();
 
-            Log.Logger = logger;
+            Log.Information("Hello World!");
 
-            Console.WriteLine("Hello World");
+            await Task.Delay(1); // delete once real awaitable code is here (to prevent warnings on empty Main method)
 
             // sleep indefinitely
             Sleep(Infinite);
