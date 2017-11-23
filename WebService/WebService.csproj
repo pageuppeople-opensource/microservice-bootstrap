@@ -7,7 +7,7 @@
     <AssemblyName>WebService</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>WebService</PackageId>
-	<AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
   </PropertyGroup>
   
   <PropertyGroup>
