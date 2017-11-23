@@ -1,13 +1,20 @@
-﻿#
-# WebService - microservice
-#
-webservice:
-  build: ./WebService
-  ports:
-    - 4000
+version: '3'
 
-#
-# WorkerService - microservice
-#
-workerservice:
-  build: ./WorkerService
+services:
+  #
+  # WebService - microservice
+  #
+  webservice:
+    build:
+      context: ./WebService
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+
+  #
+  # WorkerService - microservice
+  #
+  workerservice:
+    build:
+      context: ./WorkerService
+      dockerfile: Dockerfile
