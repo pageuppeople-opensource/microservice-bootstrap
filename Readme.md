@@ -22,7 +22,7 @@ This will help you have a head start with,
 1. Clone the repo
 2. Ensure you have [Docker installed](https://store.docker.com/search?offering=community&type=edition).
 3. Have Visual studio 2017 or any other dotnet compatible IDE handy
-5. Run `docker-compose up` from root folder of repo.
+5. Run `docker-compose up -f docker-compose.yml -f docker-compose.development.yml` from root folder of repo.
 6. Yay all up and running, Done!
 
 ### What if I just want worker service?
