@@ -22,7 +22,7 @@ This will help you have a head start with,
 1. Clone the repo
 2. Ensure you have [Docker installed](https://store.docker.com/search?offering=community&type=edition).
 3. Have Visual studio 2017 or any other dotnet compatible IDE handy
-5. Run `docker-compose up -f docker-compose.yml -f docker-compose.development.yml` from root folder of repo.
+5. Run `docker-compose -f docker-compose.yml -f docker-compose.development.yml up -d` from root folder of repo.
 6. Yay all up and running, Done!
 
 ### What if I just want worker service?
@@ -46,7 +46,7 @@ microservicebootstrap_webservice_1      dotnet run -c Release   Up      0.0
 microservicebootstrap_workerservice_1   dotnet run -c Release   Up
 ```
 
-Get the port number from above command and `curl -i localhost:32769/healthcheck`
+Get the port number from above command and in a Bash terminal `curl -i localhost:32769/healthcheck`
 to see to web service running. Pat your own back!
 
 Expected response
@@ -58,7 +58,7 @@ Server: Kestrel
 ```
 
 #### For Worker service
-Run `docker-compose logs` and see "Hello world" to confirm, your worker service is running. Pay your own back again!
+Run `docker-compose logs` and see "Hello world" to confirm, your worker service is running. Pat your own back again!
 
 #### Kinesis consumer for Worker service
 Having a kinesis consumer for worker service is an work in progress.
